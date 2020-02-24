@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name("home.index");
+Route::get('/createRecord', 'RecordController@create')->name("record.createRecord");
+Route::get('/listRecords', 'RecordController@list')->name("record.listRecords");
