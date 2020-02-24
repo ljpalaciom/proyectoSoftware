@@ -13,4 +13,5 @@
 
 Route::get('/', 'HomeController@index')->name("home.index");
 Route::get('/createRecord', 'RecordController@create')->name("record.createRecord");
+Route::post('/product/save', 'RecordController@save')->name("record.save");
 Route::get('/listRecords', 'RecordController@list')->name("record.listRecords");
