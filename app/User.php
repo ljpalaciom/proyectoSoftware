@@ -2,38 +2,73 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use Notifiable;
+    protected $table = 'user';
+    protected $fillable = ['id','name','lastName','age','email','password'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    public function getId()
+    {
+        return $this->attributes['id'];
+    }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function setId($id)
+    {
+        $this->attributes['id'] = $id;
+    }
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function getLastName()
+    {
+        return $this->attributes['lastName'];
+    }
+
+    public function setLastName($lastName)
+    {
+        $this->attributes['lastName'] = $lastName;
+    }
+
+    public function getAge()
+    {
+        return $this->attributes['age'];
+    }
+
+    public function setAge($age)
+    {
+        $this->attributes['age'] = $age;
+    }
+
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email)
+    {
+        $this->attributes['email'] = $email;
+    }
+
+    public function getPassword()
+    {
+        return $this->attributes['password'];
+    }
+
+    public function setPassword($password)
+    {
+        $this->attributes['password'] = $password;
+    }
+
+
+
 }
