@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index')->name("home.index");
-Route::get('/createRecord', 'RecordController@create')->name("record.createRecord");
-Route::post('/product/save', 'RecordController@save')->name("record.save");
-Route::get('/listRecords', 'RecordController@list')->name("record.listRecords");
+Route::get('/record/createRecord', 'RecordController@create')->name("record.createRecord");
+Route::post('/record/save', 'RecordController@save')->name("record.save");
+Route::get('/record/sort/{order}','RecordController@sort')->name("record.sort");
+Route::get('/record/listRecords', 'RecordController@list')->name("record.listRecords");
+Route::get('/record/delete/{id}', 'RecordController@delete')->name("record.delete");
+Route::get('/record/show/{id}', 'RecordController@show')->name("record.show");
