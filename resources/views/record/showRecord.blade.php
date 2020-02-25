@@ -16,7 +16,8 @@
                     <b>Height:</b> {{ $data["record"]["height"] }}<br />
                     <b>IMC:</b> {{ $data["record"]["imc"] }}<br />
                     <b>Created at:</b> {{ $data["record"]["created_at"] }}<br />
-                    <a href="{{ route('record.delete', ['id' => $data["record"]["id"]]) }}" class="btn btn-xs btn-danger pull-right">Delete</a>
+                    <br />
+                    <a href="{{ route('record.delete', ['id' => $data["record"]["id"]]) }}" class="btn btn-xs btn-danger pull-right form-control">Delete</a>
                 </div>
             </div>
         </div>

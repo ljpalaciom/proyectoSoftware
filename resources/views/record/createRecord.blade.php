@@ -18,16 +18,16 @@
 
                 <form method="POST" action="{{ route('record.save') }}">
                     @csrf
-                    <input type="text" placeholder="Enter name" name="name" value="{{ old('name') }}" />
+                    <input type="text" class="form-control" placeholder="Enter name" name="name" value="{{ old('name') }}" />
                     <br />
-                    <input type="text" placeholder="Enter weight" name="weight" value="{{ old('weight') }}" />
+                    <input type="text"  class="form-control" placeholder="Enter weight" name="weight" value="{{ old('weight') }}" />
                     <br />
-                    <input type="text" placeholder="Enter height" name="height" value="{{ old('height') }}" />
+                    <input type="text"  class="form-control" placeholder="Enter height" name="height" value="{{ old('height') }}" />
                     <br />
-                    <input type="text" placeholder="Enter IMC" name="imc" value="{{ old('imc') }}" />
+                    <input type="text"  class="form-control" placeholder="Enter IMC" name="imc" value="{{ old('imc') }}" />
                     <br />
                     <br />
-                    <input type="submit" value="Send" />
+                    <input type="submit" class="btn btn-primary form-control" value="Send" />
                 </form>
 
                 </div>
