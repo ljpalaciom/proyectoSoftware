@@ -1,3 +1,4 @@
+# Coding style
 * Los controladores deben ser nombrados en singular y finalizando con "Controller", usará notación PascalCase.
 * Los modelos deben ser nombrados en singular, usará notación PascalCase.
 * Las rutas deberán ser nombradas en singular. Ejemplo producto/show.
