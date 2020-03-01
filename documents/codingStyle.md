@@ -4,7 +4,7 @@
 * Las rutas deberán ser nombradas en singular. Ejemplo /producto/show.
 * Los parámetros de las rutas deben usar camelCase.
 * Las rutas de url deben empezar con /
-* Las rutas de url deben no deben terminar con /
+* Las rutas de url no deben terminar con /
 * Las vistas se nombrarán teniendo en cuenta el siguiente estilo:
 product.orderById
 * Las direcciones URL públicas deben usar kebab-case. Ejemplo:
