@@ -5,17 +5,17 @@
 @section('content')
 <div class="container">
   <div align="left">
-    <a type="button" class="btn btn-outline-dark" href="{{ route('user.listByName')}}" >Order by name</a>
-    <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}" >Order by id</a>
+    <a type="button" class="btn btn-outline-dark" href="{{ route('user.listByName')}}" >{{ __('user.orderByName') }}</a>
+    <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}">{{ __('user.orderById') }}</a>
   </div>
   <br />
-  <h1 align="center">List of users</h1>
+  <h1 align="center">{{ __('user.list') }}</h1>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">email</th>
+        <th scope="col">{{ __('user.id') }}</th>
+        <th scope="col">{{ __('user.name') }}</th>
+        <th scope="col">{{ __('user.email') }}</th>
       </tr>
     </thead>
     <tbody>

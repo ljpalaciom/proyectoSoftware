@@ -23,6 +23,6 @@ $factory->define(User::class, function (Faker $faker) {
         'lastName' => $faker->lastName,
         'age' => $faker->numberBetween($min = 12, $max = 70),
         'email' => $faker->unique()->safeEmail,
-        'password' => '123456'
+        'password' => '1a2b3c4d5e6f7g8h9i'
     ];
 });

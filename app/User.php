@@ -3,11 +3,22 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Http\Request;
 class User extends Model
 {
-    protected $table = 'user';
-    protected $fillable = ['id','name','lastName','age','email','password'];
+    //protected $table = 'user';
+    //id, name, lastName, age, email, password
+    protected $fillable = ['name','lastName','age','email','password'];
+
+    public static function validate(Request $request){
+      $request->validate([
+        'name' => 'required',
+        'lastName' => 'required',
+        'age' => 'required|integer|min:0|max:120',
+        'email' => 'required|email|unique:users',
+        'password' => 'required',
+      ]);
+    }
 
     public function getId()
     {
@@ -69,6 +80,8 @@ class User extends Model
         $this->attributes['password'] = $password;
     }
 
-
+    public function appointment(){
+        return $this->hasMany(Appointment::class);
+    }
 
 }
