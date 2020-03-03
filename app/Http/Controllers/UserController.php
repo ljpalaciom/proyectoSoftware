@@ -10,8 +10,7 @@ class UserController extends Controller
   public function create()
   {
     $data = []; //to be sent to the view
-    $data['title'] = 'Create user';
-    $data['users'] = User::all();
+    $data['title'] = __('user.createUser');
     return view('user.create')->with('data', $data);
   }
 
@@ -34,16 +33,15 @@ class UserController extends Controller
   public function list()
   {
     $data = []; //to be sent to the view
-    $data['title'] = 'Users List';
+    $data['title'] = __('user.list');
     $data['users'] = User::all();
-    //$data["users"] = User::orderBy('id')->get();
     return view('user.list')->with('data', $data);
   }
 
   public function listByName()
   {
     $data = []; //to be sent to the view
-    $data['title'] = 'Users List';
+    $data['title'] = __('user.list');
     $data['users'] = User::orderBy('name')->get();
     return view('user.list')->with('data', $data);
   }

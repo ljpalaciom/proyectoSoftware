@@ -10,6 +10,14 @@ class Appointment extends Model
     //Atributes id, date, description, user_email, created_at, updated_at
     protected $fillable = ['date','description','user_id'];
 
+    public static function validate(Request $request){
+      $request->validate([
+        'date' => 'required',
+        'description' => 'required',
+        'user_id' => 'required',
+      ]);
+    }
+
     public function getId()
     {
         return $this->attributes['id'];

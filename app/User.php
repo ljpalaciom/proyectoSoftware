@@ -80,8 +80,9 @@ class User extends Model
         $this->attributes['password'] = $password;
     }
 
+    /**
     public function appointment(){
         return $this->hasMany(Appointment::class);
     }
-
+    */
 }

@@ -23,7 +23,7 @@ return[
   'email' => 'Email',
 
   //show
-  'last' => 'Last name',
+  'lastName' => 'Last name',
   'age' => 'Age',
   'back' => 'Back',
   'delete' => 'Delete',
