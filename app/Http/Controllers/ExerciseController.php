@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exercise;
-
+use App\Interfaces\VideoStorage;
 class ExerciseController extends Controller
 {
   public function home()
@@ -52,7 +52,10 @@ class ExerciseController extends Controller
   public function save(Request $request)
   {
     Exercise::validate($request);
-    Exercise::create($request->only(['path_video','name', 'description', 'recommendations']));
+    $exercise = Exercise::create($request->only(['name', 'description', 'recommendations']));
+    $storeInterface = app(VideoStorage::class);
+    $storeInterface->store($request, $exercise);
+
     return back()->with('success', __('exercise.exerciseCreated'));
   }
 }

@@ -9,7 +9,8 @@ return [
     'create' => 'Create exercise',
     'nameField' => 'Name',
     'descriptionField' => 'Description',
-    'recommendationsField' => 'Recommendations',
+    'recommendationsField'  => 'Recommendations',
+    'videoField' => 'Video',
     'createdAtField' => 'Created at',
 
     //list

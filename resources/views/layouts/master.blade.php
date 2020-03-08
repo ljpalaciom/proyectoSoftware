@@ -23,6 +23,7 @@
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
             <!-- Future Left Side Links -->
+
             <li class="nav-item">
               <a class="nav-link" href="{{ route('exercise.home') }}">{{__('exercise.exercise')}}</a>
             </li>

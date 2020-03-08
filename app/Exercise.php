@@ -12,7 +12,10 @@ class Exercise extends Model
   protected $fillable = ['path_video','name', 'description', 'recommendations'];
 
   public static function validate(Request $request){
-    $request->validate(['name' => 'required|min:3']);
+    $request->validate([
+      'name' => 'required|min:3',
+      'video' => 'file|mimes:avi,mp4|max:1000'
+    ]);
   }
 
   public function getId()

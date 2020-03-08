@@ -18,7 +18,7 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('exercise.save') }}">
+          <form method="POST" action="{{ route('exercise.save') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <input type="text" class="form-control" placeholder="{{__('exercise.nameField')}}" name="name" value="{{ old('name') }}" />
@@ -29,6 +29,10 @@
             <div class="form-group">
               <textarea class="form-control" placeholder="{{__('exercise.recommendationsField')}}" name="recommendations" value="{{ old('recommendations') }}" ></textarea>
             </div>
+            <div class="form-group">
+              <input accept=".avi,.mp4" type="file" class="form-control-file" placeholder="{{__('exercise.videoField')}}" name="video" value="{{ old('video') }}" />
+            </div>
+
             <div class="row justify-content-center">
               <input type="submit" class="btn btn-primary" value="{{__('exercise.create')}}" />
             </div>
