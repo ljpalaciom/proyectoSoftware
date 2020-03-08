@@ -13,7 +13,7 @@ class Comment extends Model
 
   public static function validate(Request $request){
     $request->validate([
-      'name' => 'required|min:3',
+      'comment' => 'required|min:3',
       'exercise_id' => 'required'
     ]);
   }
