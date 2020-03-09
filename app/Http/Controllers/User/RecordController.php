@@ -7,13 +7,10 @@ use Illuminate\Http\Request;
 
 class RecordController extends Controller
 {
-    public function create()
-    {
-        return view('record.create');
-    }
+
 
     public function list(){
-      //fake chart
+
 
       $record = Record::all();
       $data = []; //to be sent to the view
@@ -25,6 +22,8 @@ class RecordController extends Controller
       $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all());
       return view('record.list', compact('chart'))->with("data",$data);
     }
+
+
 
     public function sort($order){
       $data = []; //to be sent to the view
@@ -46,19 +45,5 @@ class RecordController extends Controller
       $data["record"] = $record;
       return view('record.show')->with("data",$data);
   }
-
-    public function delete($id)
-  {
-      Record::destroy($id);
-      return redirect()->route('record.list');
-  }
-
-
-    public function save(Request $request){
-
-      Record::validate($request);
-      Record::create($request->only(["name","weight","height","imc"]));
-      return back()->with('success',__('record.recordCreated'));
-    }
 
 }
