@@ -14,19 +14,20 @@ class RecordController extends Controller
     }
 
     public function list(){
-      //fake chart
 
+      $user = Auth::user();
 
       $data = []; //to be sent to the view
       $data["title"] = "Records";
 
 
-      if(Auth::user()->getRole() == 1){
-        $record = Record::all();
+      if($user->getRole() == 1){
+        $record = Record::where('user_id', $user->getId())->get();
         $data["records"] = $record;
         $chart = new RecordChart;
         $chart->labels($record->pluck('created_at')->pluck('month')->all());
-        $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all());
+        $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all())->color("rgb(0, 102, 255)");
+
         return view('record.user.list', compact('chart'))->with("data",$data);
       }else{
           $record = Record::all();
@@ -41,8 +42,7 @@ class RecordController extends Controller
       $data["title"] = "Records";
       $data["records"] = Record::orderBy($order)->get();
 
-      return view('record.list')->with("data",$data);
-      return back()->with("data",$data);
+      return redirect("/record/list")->with("data",$data);
     }
 
 

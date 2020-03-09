@@ -5,6 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
+
         <div class="card-header">{{__('record.listTitle')}}</div>
         <div class="col-md-12 mx-auto">
           {!! $chart->container() !!}
@@ -19,7 +20,6 @@
                 </button>
 
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{{route('record.sort', 'id' ) }}">{{__('record.id')}}</a>
                   <a class="dropdown-item" href="{{route('record.sort', 'weight' ) }}">{{__('record.weight')}}</a>
                   <a class="dropdown-item" href="{{route('record.sort', 'height' ) }}">{{__('record.height')}}</a>
                   <a class="dropdown-item" href="{{route('record.sort', 'imc' ) }}">{{__('record.imc')}}</a>
@@ -31,7 +31,7 @@
                 <!-- ADD HEADERS -->
                 <thead>
                   <tr>
-                    <th scope="col">{{__('record.id')}}</th>
+
                     <th scope="col">{{__('record.weight')}}</th>
                     <th scope="col">{{__('record.height')}}</th>
                     <th scope="col">{{__('record.imc')}}</th>
@@ -42,9 +42,6 @@
                 <tbody>
                   @foreach($data["records"] as $record)
                   <tr>
-                    @if($loop->index < 2) <td><b>{{ $record->getId() }}</b></td>
-                    @else <td>{{ $record->getId() }}</td>
-                    @endif
                     <td> {{ $record->getWeight() }}</td>
                     <td> {{ $record->getHeight() }}</td>
                     <td> {{ $record->getIMC() }}</td>

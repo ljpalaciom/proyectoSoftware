@@ -21,7 +21,7 @@ return [
     'id' => 'Id',
     'name' => 'Name',
     'weight' => 'Weight',
-    'Height' => 'Height',
+    'height' => 'Height',
     'imc' => 'IMC',
     'date' => 'Date',
     'details' => 'Details',
