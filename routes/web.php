@@ -12,21 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return redirect('/login');
 });
 
 Route::get('/index', 'HomeController@index')->name("home.index");
 
 //User
-Route::post('/user/save', 'UserController@save')->name("user.save");
-Route::get('/user/create', 'UserController@create')->name("user.create");
-Route::get('/user/list', 'UserController@list')->name("user.list");
+Route::post('/user/save', 'UserController@save')->name("user.save")->middleware('checkAdmin');
+Route::get('admin/user/create', 'UserController@create')->name("user.create")->middleware('checkAdmin');
+Route::get('/user/create', 'UserController@create')->name("user.create")->middleware('checkAdmin');
+Route::get('/user/list', 'UserController@list')->name("user.list")->middleware('checkUser');
 Route::get('/user/list/byName', 'UserController@listByName')->name("user.listByName");
 Route::get('/user/show/{id}', 'UserController@show')->name("user.show");
-Route::get('/user/delete/{id}', 'UserController@delete')->name("user.delete");
+Route::post('/user/delete/{id}', 'UserController@delete')->name("user.delete");
 
 //Appointment
 Route::get('/appointment/create', 'AppointmentController@create')->name("appointment.create");
 Route::post('/appointment/save', 'AppointmentController@save')->name("appointment.save");
 Route::get('/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.list");
-Route::get('/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.delete");
+Route::post('/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.delete");
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');

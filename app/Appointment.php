@@ -7,7 +7,7 @@ use App\User;
 class Appointment extends Model
 {
 
-    //Atributes id, date, description, user_email, created_at, updated_at
+    //Atributes id, date, description, user_id, created_at, updated_at
     protected $fillable = ['date','description','user_id'];
 
     public static function validate(Request $request){

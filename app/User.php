@@ -10,15 +10,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Model //Authenticatable,
+class User extends  Authenticatable
 {
 
 
     use Notifiable;
 
-    //protected $table = 'user';
-    //id, name, role, lastName, age, email, password
-    protected $fillable = ['name','lastName','age','email','password'];
+    //id, name, role, lastName, age, email, password, role
+    protected $fillable = ['name','last_name','age','email','password']; //
 
     /**
      * The attributes that should be hidden for arrays.
@@ -38,13 +37,15 @@ class User extends Model //Authenticatable,
         'email_verified_at' => 'datetime',
     ];
 
+
     public static function validate(Request $request){
       $request->validate([
         'name' => 'required',
-        'lastName' => 'required',
+        'last_name' => 'required',
         'age' => 'required|integer|min:0|max:120',
         'email' => 'required|email|unique:users',
         'password' => 'required',
+        'role' => 'required'
       ]);
     }
 
@@ -70,12 +71,12 @@ class User extends Model //Authenticatable,
 
     public function getLastName()
     {
-        return $this->attributes['lastName'];
+        return $this->attributes['last_name'];
     }
 
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->attributes['lastName'] = $lastName;
+        $this->attributes['last_name'] = $last_name;
     }
 
     public function getAge()
@@ -106,6 +107,16 @@ class User extends Model //Authenticatable,
     public function setPassword($password)
     {
         $this->attributes['password'] = $password;
+    }
+
+    public function getRole()
+    {
+        return $this->attributes['role'];
+    }
+
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
     }
 
     /**

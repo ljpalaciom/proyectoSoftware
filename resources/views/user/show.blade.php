@@ -18,7 +18,8 @@
           <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}" style="right:50%;" >{{ __('user.back') }}</a>
         </div>
         <br />
-        <a type="button" class="btn btn-danger" href="{{ route('user.delete', $data['user']['id']) }}">{{ __('user.delete') }}</a>
+        @csrf
+        <a type="button" class="btn btn-danger" href="{{ route('user.delete', $data['user']->getId()) }}">{{ __('user.delete') }}</a>
       </div>
     </div>
   </div>
