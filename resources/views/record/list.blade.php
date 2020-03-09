@@ -6,11 +6,6 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{__('record.listTitle')}}</div>
-
-            <div class="col-md-12 mx-auto">
-              {!! $chart->container() !!}
-            </div>
-
         <div class="card-body">
           <div class="row p-5">
             <div class="col-md-12">

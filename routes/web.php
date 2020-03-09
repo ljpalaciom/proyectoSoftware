@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return redirect('/login');
 });
-Route::get('/', 'HomeController@index')->name("home.index");
+
 Route::get('/record/create', 'RecordController@create')->name("record.create");
 Route::post('/record/save', 'RecordController@save')->name("record.save");
 Route::get('/record/sort/{order}','RecordController@sort')->name("record.sort");

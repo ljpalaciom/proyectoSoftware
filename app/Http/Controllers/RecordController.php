@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Record;
 use App\Charts\RecordChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RecordController extends Controller
 {
@@ -15,15 +16,24 @@ class RecordController extends Controller
     public function list(){
       //fake chart
 
-      $record = Record::all();
+
       $data = []; //to be sent to the view
       $data["title"] = "Records";
-      $data["records"] = $record;
 
-      $chart = new RecordChart;
-      $chart->labels($record->pluck('created_at')->pluck('month')->all());
-      $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all());
-      return view('record.list', compact('chart'))->with("data",$data);
+
+      if(Auth::user()->getRole() == 1){
+        $record = Record::all();
+        $data["records"] = $record;
+        $chart = new RecordChart;
+        $chart->labels($record->pluck('created_at')->pluck('month')->all());
+        $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all());
+        return view('record.user.list', compact('chart'))->with("data",$data);
+      }else{
+          $record = Record::all();
+          $data["records"] = $record;
+          return view('record.list')->with("data",$data);
+      }
+
     }
 
     public function sort($order){

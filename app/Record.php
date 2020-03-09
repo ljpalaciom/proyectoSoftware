@@ -84,4 +84,7 @@ class Record extends Model
     $this->attributes['created_at'] = $created;
   }
 
+  public function user(){
+    return $this->belongsTo(User::class);
+  }
 }
