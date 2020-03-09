@@ -74,9 +74,9 @@ class User extends  Authenticatable
         return $this->attributes['last_name'];
     }
 
-    public function setLastName($last_name)
+    public function setLastName($lastNname)
     {
-        $this->attributes['last_name'] = $last_name;
+        $this->attributes['last_name'] = $lastName;
     }
 
     public function getAge()

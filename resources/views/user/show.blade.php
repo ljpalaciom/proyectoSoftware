@@ -18,8 +18,12 @@
           <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}" style="right:50%;" >{{ __('user.back') }}</a>
         </div>
         <br />
-        @csrf
-        <a type="button" class="btn btn-danger" href="{{ route('user.delete', $data['user']->getId()) }}">{{ __('user.delete') }}</a>
+        <form method="POST" action="{{ route('user.delete', $data['user']->getId()) }}">
+          @csrf
+          <div class="row justify-content-center">
+            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{ __('user.delete') }}</button>
+          </div>
+        </form>  
       </div>
     </div>
   </div>
