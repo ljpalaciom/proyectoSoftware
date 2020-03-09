@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Record extends Model
 {
-    //attributes id, name, price, created_at, updated_at
+    //attributes id, name, weight, height,imc, created_at, updated_at
     protected $fillable = ['name','weight', 'height','imc'];
-    
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -58,6 +58,16 @@ class Record extends Model
     public function setIMC($imc)
     {
         $this->attributes['imc'] = $imc;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->attributes['created_at'];
+    }
+
+    public function setCreatedAt($created)
+    {
+        $this->attributes['created_at'] = $created;
     }
 
 }

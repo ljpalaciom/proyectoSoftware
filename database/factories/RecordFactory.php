@@ -22,6 +22,6 @@ $factory->define(Record::class, function (Faker $faker) {
         'name' => $faker->name,
         'weight' => $faker->numberBetween($min = 20.0, $max = 200.0),
         'height' => $faker->numberBetween($min = 20.0, $max = 200.0),
-        'imc' => $faker->numberBetween($min = 50.0, $max = 40.0),
+        'imc' => $faker->numberBetween($min = 40.0, $max = 50.0),
     ];
 });

@@ -8,7 +8,7 @@ class RecordController extends Controller
 {
     public function create()
     {
-        return view('record.createRecord');
+        return view('record.create');
     }
 
     public function list(){
@@ -16,7 +16,7 @@ class RecordController extends Controller
       $data["title"] = "Records";
       $data["records"] = Record::all();
 
-      return view('record.listRecords')->with("data",$data);
+      return view('record.list')->with("data",$data);
     }
 
     public function sort($order){
@@ -24,7 +24,7 @@ class RecordController extends Controller
       $data["title"] = "Records";
       $data["records"] = Record::orderBy($order)->get();
 
-      return view('record.listRecords')->with("data",$data);
+      return view('record.list')->with("data",$data);
       return back()->with("data",$data);
     }
 
@@ -35,16 +35,15 @@ class RecordController extends Controller
       $data = []; //to be sent to the view
       $record = Record::findOrFail($id);
 
-
       $data["title"] = "Record";
       $data["record"] = $record;
-      return view('record.showRecord')->with("data",$data);
+      return view('record.show')->with("data",$data);
   }
 
     public function delete($id)
   {
       Record::where('id', $id)->delete();
-      return redirect()->route('record.listRecords');
+      return redirect()->route('record.list');
   }
 
 
