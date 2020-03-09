@@ -32,6 +32,16 @@ Route::post('/appointment/save', 'AppointmentController@save')->name("appointmen
 Route::get('/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.list");
 Route::post('/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.delete");
 
+//Exercise
+Route::get('/exercise/home', 'ExerciseController@home')->name("exercise.home");
+Route::get('/exercise/create', 'ExerciseController@create')->name("exercise.create");
+Route::post('/exercise/save', 'ExerciseController@save')->name("exercise.save");
+Route::get('/exercise/list', 'ExerciseController@list')->name("exercise.list");
+Route::get('/exercise/listbydescription', 'ExerciseController@listByDescription')->name("exercise.listByDescription");
+Route::get('/exercise/retrieve/{id}', 'ExerciseController@retrieve')->name("exercise.retrieve");
+Route::post('/exercise/delete/{id}', 'ExerciseController@delete')->name("exercise.delete");
+
+//Login routes
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
