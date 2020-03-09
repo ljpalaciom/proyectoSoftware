@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return redirect('/login');
 });
@@ -50,6 +49,13 @@ Route::get('/exercise/list', 'ExerciseController@list')->name("exercise.list");
 Route::get('/exercise/listbydescription', 'ExerciseController@listByDescription')->name("exercise.listByDescription");
 Route::get('/exercise/retrieve/{id}', 'ExerciseController@retrieve')->name("exercise.retrieve");
 Route::post('/exercise/delete/{id}', 'ExerciseController@delete')->name("exercise.delete");
+
+// Comment
+Route::get('/comment/create/{exerciseId}', 'CommentController@create')->name("comment.create")->middleware('checkUser');
+Route::post('/comment/save', 'CommentController@save')->name("comment.save")->middleware('checkUser');
+Route::get('/comment/list', 'CommentController@list')->name("comment.list")->middleware('checkAdmin');
+Route::get('/comment/sort/{order}', 'CommentController@sort')->name("comment.sort")->middleware('checkAdmin');
+Route::post('/comment/delete/{id}', 'CommentController@delete')->name("comment.delete")->middleware('checkAdmin');
 
 //Login routes
 Auth::routes(['register' => false]);
