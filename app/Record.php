@@ -3,12 +3,26 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Record extends Model
 {
     //attributes id, name, weight, height,imc, created_at, updated_at
     protected $fillable = ['name','weight', 'height','imc'];
 
+
+//TODO: Add validations
+
+
+public static function validate(Request $request){
+  $request->validate([
+    "name" => "required|regex:/^[\pL\s\-]+$/u",
+    "weight" => "required|numeric|min:0",
+    "height" => "required|numeric|min:0",
+    "imc" => "required|numeric|min:0"
+  ]);
+
+}
     public function getId()
     {
         return $this->attributes['id'];
