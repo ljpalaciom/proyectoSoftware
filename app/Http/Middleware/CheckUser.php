@@ -17,9 +17,9 @@ class CheckUser
   {
     $role = $request->user()->getRole();
     if($role == 2){
-      return redirect('/home');
+      return redirect('/trainer');
     }else if ($role == 3){
-      return redirect('/home');
+      return redirect('/admin');
     }
     return $next($request);
   }

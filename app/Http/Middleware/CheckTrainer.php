@@ -17,9 +17,9 @@ class CheckTrainer
   {
     $role = $request->user()->getRole();
     if($role == 1){
-      return redirect('/home');
+      return redirect('/index');
     }else if ($role == 3){
-      return redirect('/home');
+      return redirect('/admin');
     }
     return $next($request);
   }

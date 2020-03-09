@@ -15,7 +15,10 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::get('/index', 'HomeController@index')->name("home.index");
+//Home
+Route::get('/index', 'HomeController@user')->name("home.user");
+Route::get('/trainer', 'HomeController@trainer')->name("home.trainer");
+Route::get('/admin', 'HomeController@admin')->name("home.admin");
 
 //User
 Route::post('/user/save', 'UserController@save')->name("user.save")->middleware('checkAdmin');
