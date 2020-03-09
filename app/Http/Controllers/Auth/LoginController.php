@@ -47,8 +47,8 @@ class LoginController extends Controller
       return redirect('/');
     }else if ($role == 2){
       return redirect('/trainer');
-    }else{
-      return redirect('/home');
+    }else if ($role == 3){
+      return redirect('/admin');
     }
     return redirect()->intended($this->redirectPath());
   }

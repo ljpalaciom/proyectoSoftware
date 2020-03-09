@@ -10,7 +10,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends  Authenticatable
 {
 
 
@@ -74,7 +74,7 @@ class User extends Authenticatable
         return $this->attributes['last_name'];
     }
 
-    public function setLastName($lastNname)
+    public function setLastName($lastName)
     {
         $this->attributes['last_name'] = $lastName;
     }

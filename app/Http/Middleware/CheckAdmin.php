@@ -17,9 +17,9 @@ class CheckAdmin
     {
         $role = $request->user()->getRole();
         if($role == 1){
-          return redirect('/home');
+          return redirect('/index');
         }else if ($role == 2){
-          return redirect('/home');
+          return redirect('/trainer');
         }
         return $next($request);
     }
