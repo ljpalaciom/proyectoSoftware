@@ -49,7 +49,10 @@
               Home
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.admin') }}">Users</a>
+              <a class="nav-link" href="{{ route('user.listUsersAdmin') }}">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.listTrainersAdmin') }}">Trainers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('home.admin') }}">Exercise</a>

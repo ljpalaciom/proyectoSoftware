@@ -14,16 +14,13 @@
           <b>{{ __('user.age') }}:</b> {{ $data["user"]->getAge() }}<br />
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
         </div>
-        <div align="center">
-          <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}" style="right:50%;" >{{ __('user.back') }}</a>
-        </div>
         <br />
-        <form method="POST" action="{{ route('user.delete', $data['user']->getId()) }}">
+        <form method="POST" action="{{ route('user.deleteAdmin', $data['user']->getId(), $data['user']->getRole()) }}">
           @csrf
           <div class="row justify-content-center">
             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{ __('user.delete') }}</button>
           </div>
-        </form>  
+        </form>
       </div>
     </div>
   </div>
