@@ -56,6 +56,11 @@ class Comment extends Model
   {
     $this->attributes['comment'] = $comment;
   }
+  
+  public function getCreatedAt()
+  {
+    return $this->attributes['created_at'];
+  }
 
   public function exercise(){
     return $this->belongsTo(Exercise::class);

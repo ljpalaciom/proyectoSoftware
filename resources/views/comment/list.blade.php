@@ -11,16 +11,17 @@
           <h1 align="center"> {{__('comment.listTitle')}}</h1>
           <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              {{__('comment.sort')}}
+              {{__('comment.sortBy')}}
             </button>
 
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('comment.sort', 'id' ) }}">Id</a>
-              <a class="dropdown-item" href="{{route('comment.sort', 'exercise.name' ) }}">{{__('comment.exerciseName')}}</a>
+              <a class="dropdown-item" href="{{route('comment.sort', 'Exercises.name' ) }}">{{__('comment.exerciseName')}}</a>
               <a class="dropdown-item" href="{{route('comment.sort', 'comment' ) }}">{{__('comment.comment')}}</a>
               <a class="dropdown-item" href="{{route('comment.sort', 'created_at' ) }}">{{__('comment.createdAtField')}}</a>
             </div>
           </div>
+          <br />
           <table class="table">
             <thead class="thead-dark">
               <tr>
@@ -35,7 +36,8 @@
               @foreach($data["comments"] as $comment)
               <tr>
                 <td>{{$comment->getId()}}</td>
-                <td>{{$comment->exercise().getName()}}</td>
+                <td>{{$comment->user->getName()}}</td>
+                <td>{{$comment->exercise->getName()}}</td>
                 <td>{{$comment->getComment()}}</td>
                 <td>{{$comment->getCreatedAt()}}</td>
                 <td>

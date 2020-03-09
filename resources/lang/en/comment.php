@@ -7,13 +7,13 @@ return [
 
     //create
     'create' => 'Create comment',
-    'createTitle' => 'Create comment',
+    'createTitle' => 'Create comment about an exercise',
     'commentField' => 'Comment',
 
     //list
     'list' => 'List comments',
     'listTitle' => 'List comments',
-    'sortBy' => 'sort by',
+    'sortBy' => 'Sort by',
     'inspect' => 'Inspect',
     'action' => 'Action',
     'remove' => 'Remove comment',

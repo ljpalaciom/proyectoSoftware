@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Exercise;
+use Auth;
+
 use App\Interfaces\VideoStorage;
 class commentController extends Controller
 {
 
-  public function create($exercise_id)
+  public function create($exerciseId)
   {
     $data = []; //to be sent to the view
     $data["title"] = __('comment.createTitle');
-    $data["exercise"] = Exercise::findOrFail($exercise_id);
+    $data["exercise"] = Exercise::findOrFail($exerciseId);
     return view('comment.create')->with("data", $data);
   }
 
@@ -26,7 +29,14 @@ class commentController extends Controller
   public function sort($order){
     $data = []; // to be sent to the view
     $data["title"] =  __('comment.listTitle');
-    $data["records"] = Comment::with('user', 'exercise')->orderBy($order)->get();
+    if ($order == 'Exercises.name'){
+      $data["comments"] = Comment::join('Exercises', 'Exercises.id', '=', 'Comments.exercise_id')
+       ->orderBy($order)
+       ->select('Comments.*')
+       ->with('user', 'exercise')->get();
+    }else{
+      $data["comments"] = Comment::with('user', 'exercise')->orderBy($order)->get();
+    }
     return view('comment.list')->with("data",$data);
   }
 

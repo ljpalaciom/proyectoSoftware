@@ -17,12 +17,15 @@
             @endforeach
           </ul>
           @endif
+          <b>{{__('exercise.nameField')}}:</b> {{ $data["exercise"]->getName() }}<br /> <br>
+          <b>{{__('exercise.descriptionField')}}:</b> {{ $data["exercise"]->getDescription() }}<br /> <br>
+          <b>{{__('exercise.recommendationsField')}}:</b> {{ $data["exercise"]->getRecommendations() }}<br /> <br>
 
           <form method="POST" action="{{ route('comment.save') }}">
             @csrf
-            <input name="exercise_id" type="hidden" value={{exercise_id}}>
+            <input name="exercise_id" type="hidden" value="{{$data['exercise']->getId()}}">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="{{__('comment.commentField')}}" name="comment" value="{{ old('comment') }}" />
+              <textarea class="form-control" placeholder="{{__('comment.commentField')}}" name="comment" value="{{ old('comment') }}"></textarea>
             </div>
 
             <div class="row justify-content-center">
