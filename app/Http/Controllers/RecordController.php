@@ -26,7 +26,7 @@ class RecordController extends Controller
         $data["records"] = $record;
         $chart = new RecordChart;
         $chart->labels($record->pluck('created_at')->pluck('month')->all());
-        $chart->dataset('Weight by month', 'line', $record->pluck('weight')->all())->color("rgb(0, 102, 255)");
+        $chart->dataset(__('record.chartTitle'), 'line', $record->pluck('weight')->all())->color("rgb(0, 102, 255)");
 
         return view('record.user.list', compact('chart'))->with("data",$data);
       }else{

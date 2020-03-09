@@ -4,7 +4,7 @@ return [
      //Messages
     'recordCreated' => 'Record created successfully',
     'record' => 'Record',
-
+    'chartTitle' => 'Weight by month',
     //create
     'create' => 'Create',
     'createTitle' => 'Create record',
