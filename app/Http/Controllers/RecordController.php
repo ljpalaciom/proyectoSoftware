@@ -51,7 +51,7 @@ class RecordController extends Controller
 
       Record::validate($request);
       Record::create($request->only(["name","weight","height","imc"]));
-      return back()->with('success','Record created successfully!');
+      return back()->with('success',__('record.recordCreated'));
     }
 
 }
