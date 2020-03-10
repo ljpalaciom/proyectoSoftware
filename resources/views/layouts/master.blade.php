@@ -30,7 +30,7 @@
               <a class="nav-link" href="{{ route('home.user') }}">Training</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.user') }}">Records</a>
+              <a class="nav-link" href="{{ route('record.list') }}">Records</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('home.user') }}">Appointments</a>
@@ -91,4 +91,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+@isset($chart)
+{!! $chart->script() !!}
+@endisset
 </html>

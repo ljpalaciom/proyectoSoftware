@@ -119,6 +119,10 @@ class User extends  Authenticatable
         $this->attributes['role'] = $role;
     }
 
+    public function records(){
+      return $this->hasMany(Record::class);
+    }
+    
     /**
     public function appointment(){
         return $this->hasMany(Appointment::class);
