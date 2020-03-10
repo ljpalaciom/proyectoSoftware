@@ -39,3 +39,14 @@ php artisan serve
 http://localhost:8000/
 Nota: En caso de que el proyecto este en htdocs la ruta inicial del proyecto es:
 http://localhost/proyectoSoftware/public/
+
+# Screehshots
+
+![alt text](https://github.com/ljpalaciom/proyectoSoftware/blob/develop/documents/Screen%201.jpeg)
+
+![alt text](https://github.com/ljpalaciom/proyectoSoftware/blob/develop/documents/Screen%202.jpeg)
+
+![alt text](https://github.com/ljpalaciom/proyectoSoftware/blob/develop/documents/Screen%203.jpeg)
+
+![alt text](https://github.com/ljpalaciom/proyectoSoftware/blob/develop/documents/Screen%204.jpeg)
+
