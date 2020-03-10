@@ -8,7 +8,7 @@
     <div class="col-md-8">
       @include('util.message')
       <div class="card">
-        <div class="card-header"><center> {{ __('user.create') }} </center></div>
+        <div class="card-header"><center> {{ __('appointment.createAppointment') }} </center></div>
         <div class="card-body" align="center">
           @if($errors->any())
           <ul id="errors">
@@ -17,25 +17,19 @@
             @endforeach
           </ul>
           @endif
-          <form method="POST" action="{{ route('user.saveAdmin') }}">
+          <form method="POST" action="{{ route('appointment.save', $data['userId']) }}">
             @csrf
-            <input type="text" class="form-control" placeholder="{{ __('user.enterName') }}" name="name" value="{{ old('name') }}"/> <br />
-            <input type="text" class="form-control" placeholder="{{ __('user.enterLastName') }}" name="last_name" value="{{ old('last_name') }}" /><br />
-            <input type="number" class="form-control" placeholder="{{ __('user.enterAge') }}" name="age" value="{{ old('age') }}" /> <br />
-            <input type="email" class="form-control" placeholder="{{ __('user.enterEmail') }}" name="email" value="{{ old('email') }}" /> <br />
-            <input type="password" class="form-control" placeholder="{{ __('user.enterPassword') }}" name="password" value="{{ old('password') }}" /> <br />
-            <div class="input-group-prepend">
-              <select class="custom-select" name="role">
-                <option value="1" selected>{{ __('user.user') }}</option>
-                <option value="2">{{ __('user.trainer') }}</option>
-                <option value="3">{{ __('user.admin') }}</option>
-              </select>
-            </div>  <br />
-            <input type="submit" class="btn btn-success" value="{{ __('user.send') }}"/>
-          </form>
-        </div>
+            <input type="date" class="form-control"  name="date" value="{{ old('date') }}"/> <br />
+            <input type="time" class="form-control"  name="time" value="{{ old('time') }}"/> <br />
+            <textarea class="form-control" placeholder="{{__('appointment.insertDescription')}}" name="description" value="{{ old('description') }}"></textarea>
+          </div>
+          <br />
+          <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}""/>
+          <input type="submit" class="btn btn-success" value="{{ __('appointment.create') }}"/>
+        </form>
       </div>
     </div>
   </div>
+</div>
 </div>
 @endsection

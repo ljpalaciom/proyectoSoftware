@@ -97,12 +97,12 @@ class UserController extends Controller
     return view('user.listUsersAdmin')->with('data', $data);
   }
 
-  public function delete($id, $role){
+  public function delete($id){
     User::destroy($id);
-    if($role == 2){
-      return redirect('admin/user/listTrainers');
-    }
-    return redirect('admin/user/listUsers');
+    // if($role == 2){
+    //   return redirect('admin/user/listTrainers');
+    // }
+    return redirect('/admin/user/usersList');
   }
 
 }
