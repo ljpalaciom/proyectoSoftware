@@ -5,58 +5,44 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-
-        <div class="card-header">{{__('record.listTitle')}}</div>
-        <div class="col-md-12 mx-auto">
-          {!! $chart->container() !!}
-        </div>
+        <div class="card-header">{{__('routine.listTitle')}}</div>
         <div class="card-body">
           <div class="row p-5">
             <div class="col-md-12">
-
-              <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                  {{__('record.sortBy')}}
-                </button>
-
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{{route('record.sort', 'weight' ) }}">{{__('record.weight')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'height' ) }}">{{__('record.height')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'imc' ) }}">{{__('record.imc')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'created_at' ) }}">{{__('record.date')}}</a>
-                </div>
-              </div>
               <br />
               <table  class="table table table-striped table-bordered">
                 <!-- ADD HEADERS -->
                 <thead>
                   <tr>
-
-                    <th scope="col">{{__('record.weight')}}</th>
-                    <th scope="col">{{__('record.height')}}</th>
-                    <th scope="col">{{__('record.imc')}}</th>
-                    <th scope="col">{{__('record.date')}}</th>
+                    <th scope="col">{{__('routine.repetitionsField')}}</th>
+                    <th scope="col">{{__('routine.sequencesField')}}</th>
+                    <th scope="col">{{__('routine.secondsToRestField')}}</th>
+                    <th scope="col">{{__('routine.exerciseName')}}</th>
+                    <th scope="col">{{__('routine.action')}}</th>
                   </tr>
                 </thead>
                 <!-- BIND ARRAY TO TABLE -->
                 <tbody>
-                  @foreach($data["records"] as $record)
+                  @foreach($data["routines"] as $routine)
                   <tr>
-                    <td> {{ $record->getWeight() }}</td>
-                    <td> {{ $record->getHeight() }}</td>
-                    <td> {{ $record->getIMC() }}</td>
-                    <td> {{ $record->getCreatedAt() }}</td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
-              <br/>
+                    <td> {{ $routine->getRepetitions() }}</td>
+                    <td> {{ $routine->getSequences() }}</td>
+                    <td> {{ $routine->getSecondsToRest() }}</td>
+                    <td> {{ $routine->name }}</td>
+                    <td>
+                        <a href="{{ route('routine.retrieve', ['id' => $routine->getId() ]) }}" class="btn btn-primary">{{__('routine.retrieveTitle')}}</a>
+                    </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+                <br/>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-@endsection
+  @endsection

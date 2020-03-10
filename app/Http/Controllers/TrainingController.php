@@ -32,6 +32,16 @@ class TrainingController extends Controller
     return redirect("/trainer/user/show/" . strval($id))->with("type",1);
   }
 
+  public function list()
+  {
+    $data = []; //to be sent to the view
+    $data["title"] = __('training.trainingTitle');
+    $user = Auth::user();
+    $data["trainings"] = Training::where('user_id', $user->getId())->get();    
+    return view('training.list')->with("data", $data);
+  }
+
+
   public function delete($id)
   {
     Training::destroy($id);
