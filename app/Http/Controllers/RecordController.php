@@ -18,8 +18,7 @@ class RecordController extends Controller
       $user = Auth::user();
 
       $data = []; //to be sent to the view
-      $data["title"] = "Records";
-
+      $data["title"] = __('record.record');
 
       if($user->getRole() == 1){
         $record = Record::where('user_id', $user->getId())->get();
@@ -34,12 +33,11 @@ class RecordController extends Controller
           $data["records"] = $record;
           return view('record.list')->with("data",$data);
       }
-
     }
 
     public function sort($order){
       $data = []; //to be sent to the view
-      $data["title"] = "Records";
+      $data["title"] = __('record.record');
       $data["records"] = Record::orderBy($order)->get();
 
       return redirect("/record/list")->with("data",$data);
@@ -52,7 +50,7 @@ class RecordController extends Controller
       $data = []; //to be sent to the view
       $record = Record::findOrFail($id);
 
-      $data["title"] = "Record";
+      $data["title"] = __('record.record');
       $data["record"] = $record;
       return view('record.show')->with("data",$data);
   }

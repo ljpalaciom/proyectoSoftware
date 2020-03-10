@@ -16,8 +16,12 @@
           <b>{{__('record.imc')}}:</b> {{ $data["record"]->getIMC() }}<br />
           <b>{{__('record.createdAt')}}:</b> {{ $data["record"]->getCreatedAt() }}<br />
           <br />
-          <a href="{{ route('record.delete', ['id' => $data["record"]->getId()]) }}" class="btn btn-xs btn-danger pull-right form-control">{{__('record.delete')}}</a>
-        </div>
+          <form method="POST" action="{{ route('record.delete', ['id' => $data["record"]->getId()]) }}">
+            @csrf
+            <button type="submit" class="btn btn-xs btn-danger pull-right form-control">{{__('record.delete')}}</button>
+          </div>
+        </form>
+
       </div>
     </div>
   </div>

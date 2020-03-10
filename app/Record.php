@@ -33,7 +33,6 @@ class Record extends Model
     $this->attributes['id'] = $id;
   }
 
-
   public function getName()
   {
     return $this->attributes['name'];
