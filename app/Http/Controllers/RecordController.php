@@ -10,7 +10,9 @@ class RecordController extends Controller
 {
     public function create()
     {
-        return view('record.create');
+        $data = []; //to be sent to the view
+        $data["title"] = __('record.recordTitle');
+        return view('record.create')->with("data",$data);
     }
 
     public function list(){
@@ -65,6 +67,7 @@ class RecordController extends Controller
     public function save(Request $request){
 
       Record::validate($request);
+      //TODO: Arreglar guardar, falta user_id
       Record::create($request->only(["name","weight","height","imc"]));
       return back()->with('success',__('record.recordCreated'));
     }
