@@ -38,6 +38,24 @@ class UserController extends Controller
     return view('user.list')->with('data', $data);
   }
 
+  public function searchByName()
+  {
+    $data = []; //to be sent to the view
+    $data['title'] = __('user.list');
+    return view('user.search')->with('data', $data);
+  }
+
+  public function search(Request $request)
+  {
+
+    $users = User::where('name','like','%'.$request["name"].'%')->get();
+    $data = []; //to be sent to the view
+    $data['title'] = __('user.list');
+    $data['users'] = $users;
+    return view('user.search')->with('data', $data);
+  }
+
+
   public function listByName()
   {
     $data = []; //to be sent to the view

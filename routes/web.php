@@ -18,7 +18,7 @@ Route::get('/record/create', 'RecordController@create')->name("record.create");
 Route::post('/record/save', 'RecordController@save')->name("record.save");
 Route::get('/record/sort/{order}','RecordController@sort')->name("record.sort");
 Route::get('/record/list', 'RecordController@list')->name("record.list");
-Route::post('/record/delete/{id}', 'RecordController@delete')->name("record.delete"); 
+Route::post('/record/delete/{id}', 'RecordController@delete')->name("record.delete");
 Route::get('/record/show/{id}', 'RecordController@show')->name("record.show");
 
 //Home
@@ -34,6 +34,8 @@ Route::get('/user/list', 'UserController@list')->name("user.list")->middleware('
 Route::get('/user/list/byName', 'UserController@listByName')->name("user.listByName");
 Route::get('/user/show/{id}', 'UserController@show')->name("user.show");
 Route::post('/user/delete/{id}', 'UserController@delete')->name("user.delete");
+Route::get('/user/searchByName', 'UserController@searchByName')->name("user.searchByName");
+Route::get('/user/search', 'UserController@search')->name("user.search");
 
 //Appointment
 Route::get('/appointment/create', 'AppointmentController@create')->name("appointment.create");

@@ -12,6 +12,7 @@ return[
   'enterEmail' => 'Enter email',
   'enterPassword' => 'Enter password',
   'send' => 'Send',
+  'search' => 'Search',
 
   //list
   'orderByName' => 'Order by name',

@@ -41,7 +41,7 @@
               Home
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.trainer') }}">Users</a>
+              <a class="nav-link" href="{{ route('user.searchByName') }}">Users</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 3)
