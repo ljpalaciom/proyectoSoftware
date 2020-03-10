@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Training;
+use App\Record;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -35,10 +36,20 @@ class UserController extends Controller
       return view('user.showAdmin')->with('data', $data);
     }else{
       $trainings = Training::where('user_id', $user->getId())->orderBy('day')->get();
+      $records = Record::where('user_id', $user->getId())->orderBy('created_at')->get();
       $data['trainings'] = $trainings;
-      return view('user.showTrainer')->with('data', $data);
+      $data['records'] = $records;
+      return view('user.showTrainer')->with(['data'=> $data]);
     }
 
+  }
+
+  public function swipeView($type){
+    if($type==1){
+      return back()->with('type',1);
+    }else{
+      return back()->with('type',2);
+    }
   }
 
   public function listUsers()
@@ -70,7 +81,7 @@ class UserController extends Controller
   public function search(Request $request)
   {
 
-    $users = User::where('name','like','%'.$request["name"].'%')->get();
+    $users = User::where('name','like','%'.$request["name"].'%')->where('role',"=",'1')->get();
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
     $data['users'] = $users;
@@ -86,12 +97,12 @@ class UserController extends Controller
     return view('user.listUsersAdmin')->with('data', $data);
   }
 
-  public function delete($id, $role){
+  public function delete($id){
     User::destroy($id);
-    if($role == 2){
-      return redirect('admin/user/listTrainers');
-    }
-    return redirect('admin/user/listUsers');
+    // if($role == 2){
+    //   return redirect('admin/user/listTrainers');
+    // }
+    return redirect('/admin/user/usersList');
   }
 
 }

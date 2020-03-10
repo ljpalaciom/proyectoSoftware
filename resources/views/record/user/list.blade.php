@@ -31,7 +31,6 @@
                 <!-- ADD HEADERS -->
                 <thead>
                   <tr>
-
                     <th scope="col">{{__('record.weight')}}</th>
                     <th scope="col">{{__('record.height')}}</th>
                     <th scope="col">{{__('record.imc')}}</th>

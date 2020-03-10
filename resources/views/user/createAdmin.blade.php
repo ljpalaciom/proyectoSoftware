@@ -31,7 +31,7 @@
                 <option value="3">{{ __('user.admin') }}</option>
               </select>
             </div>  <br />
-            <input type="submit" class="btn btn-success" value="{{ __('user.send') }}"/>
+            <input type="submit" class="btn btn-success" value="{{ __('user.create') }}"/>
           </form>
         </div>
       </div>

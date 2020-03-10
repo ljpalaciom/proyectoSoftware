@@ -17,23 +17,6 @@ return [
     'details' => 'Details',
     'show' => 'Show',
     'addTraining' => 'Add Training',
-
+    'delete' => 'Delete',
 
 ];
-/*
-//list and details
-'list' => 'List records',
-'listTitle' => 'List records',
-'detailTitle' => 'Record details',
-'sortBy' => 'Sort by',
-'id' => 'Id',
-'name' => 'Name',
-'weight' => 'Weight',
-'height' => 'Height',
-'imc' => 'IMC',
-'date' => 'Date',
-'details' => 'Details',
-'show' => 'Show',
-'createdAt' => 'Created at',
-'delete' => 'Delete',
-*/

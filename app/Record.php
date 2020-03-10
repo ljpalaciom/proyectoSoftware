@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class Record extends Model
 {
-  //attributes id, name, weight, height,imc, created_at, updated_at
-  protected $fillable = ['name','weight', 'height','imc'];
+  //attributes id, user_id, weight, height,imc, created_at, updated_at
+  protected $fillable = ['user_id','weight', 'height','imc'];
 
 
   //TODO: Add validations
@@ -16,7 +16,6 @@ class Record extends Model
 
   public static function validate(Request $request){
     $request->validate([
-      "name" => "required|regex:/^[\pL\s\-]+$/u",
       "weight" => "required|numeric|min:0",
       "height" => "required|numeric|min:0",
       "imc" => "required|numeric|min:0"
@@ -32,14 +31,14 @@ class Record extends Model
     $this->attributes['id'] = $id;
   }
 
-  public function getName()
+  public function getUserId()
   {
-    return $this->attributes['name'];
+    return $this->attributes['user_id'];
   }
 
-  public function setName($name)
+  public function setUserId($name)
   {
-    $this->attributes['name'] = $name;
+    $this->attributes['user_id'] = $name;
   }
 
   public function getWeight()

@@ -29,34 +29,23 @@ class TrainingController extends Controller
 
     $comment = Training::create($fields);
 
-    return redirect("/trainer/user/show/" . strval($id));
+    return redirect("/trainer/user/show/" . strval($id))->with("type",1);
   }
-
-  // public function show($trainingId)
-  // {
-  //   $data = []; //to be sent to the view
-  //   $data["title"] = __('training.trainingTitle');
-  //   $data["training_id"] = $trainingId;
-  //
-  //   return view('training.create')->with("data", $data);
-  // }
-
 
   public function list()
   {
     $data = []; //to be sent to the view
-    $data["title"] = __('comment.listTitle');
+    $data["title"] = __('training.trainingTitle');
     $user = Auth::user();
     $data["trainings"] = Training::where('user_id', $user->getId())->get();    
     return view('training.list')->with("data", $data);
   }
 
-/*
+
   public function delete($id)
   {
-    Comment::destroy($id);
-    return redirect('comment/list');
+    Training::destroy($id);
+    return back()->with("type",1);
   }
-*/
 
 }
