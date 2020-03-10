@@ -4,6 +4,7 @@ return [
      //Messages
     'exerciseCreated' => 'Exercise created successfully',
     'exercise' => 'Exercise',
+    'createTitle' => 'Create Exercise',
 
     //create
     'create' => 'Create exercise',
