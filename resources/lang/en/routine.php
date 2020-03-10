@@ -24,5 +24,8 @@ return [
     'remove' => 'Delete routine',
     'removeButton' => 'Delete',
     'exerciseName' => 'Exercise name',
-    'select' => 'Select exercise'
+    'select' => 'Select exercise',
+
+    //retrieve
+    'retrieveTitle' => 'Retrieve info routine',
 ];

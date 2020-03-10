@@ -27,7 +27,7 @@
               Home
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.user') }}">Training</a>
+              <a class="nav-link" href="{{ route('training.list') }}">Training</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('record.list') }}">Records</a>

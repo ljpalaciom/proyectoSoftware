@@ -74,13 +74,14 @@ Route::get('/comment/sort/{order}', 'CommentController@sort')->name("comment.sor
 Route::post('/comment/delete/{id}', 'CommentController@delete')->name("comment.delete")->middleware('checkAdmin');
 
 //Routine
-Route::get('/trainer/routine/list/{trainingId}', 'RoutineController@list')->name("routine.list")->middleware('checkTrainer');
+Route::get('/trainer/routine/list/{trainingId}', 'RoutineController@listTrainer')->name("routine.listTrainer")->middleware('checkTrainer');
 Route::get('/trainer/routine/create/{trainingId}', 'RoutineController@create')->name("routine.create")->middleware('checkTrainer');
 Route::post('/trainer/routine/save', 'RoutineController@save')->name("routine.save")->middleware('checkTrainer');
 Route::post('/trainer/routine/delete/{id}', 'RoutineController@delete')->name("routine.delete")->middleware('checkTrainer');
 
-
+Route::get('/routine/retrieve/{id}', 'RoutineController@retrieve')->name("routine.retrieve")->middleware('checkUser');
+Route::get('/routine/list/{trainingId}', 'RoutineController@listUser')->name("routine.listUser")->middleware('checkUser');
+Route::get('/training/list/', 'TrainingController@list')->name("training.list")->middleware('checkUser');
 //Training
 Route::get('trainer/training/create/{id}', 'TrainingController@create')->name("training.create");
-Route::get('trainer/training/show/{id}', 'TrainingController@show')->name("training.show");
 Route::post('trainer/training/save/{id}', 'TrainingController@save')->name("training.save");

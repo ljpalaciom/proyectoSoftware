@@ -42,16 +42,16 @@ class TrainingController extends Controller
   // }
 
 
-/*
   public function list()
   {
     $data = []; //to be sent to the view
     $data["title"] = __('comment.listTitle');
-    $data["comments"] = Comment::with('user', 'exercise')->get();
-    return view('comment.list')->with("data", $data);
+    $user = Auth::user();
+    $data["trainings"] = Training::where('user_id', $user->getId())->get();    
+    return view('training.list')->with("data", $data);
   }
 
-
+/*
   public function delete($id)
   {
     Comment::destroy($id);
