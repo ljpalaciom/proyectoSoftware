@@ -21,7 +21,6 @@ class Record extends Model
       "height" => "required|numeric|min:0",
       "imc" => "required|numeric|min:0"
     ]);
-
   }
   public function getId()
   {

@@ -17,6 +17,7 @@ return[
   'user' => 'User',
   'admin' => 'Admin',
   'trainer' => 'Trainer',
+  'search' => 'Search',
 
 
   //list

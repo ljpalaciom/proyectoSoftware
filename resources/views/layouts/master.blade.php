@@ -41,7 +41,7 @@
               Home
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('user.listUsersTrainer') }}">Users</a>
+              <a class="nav-link" href="{{ route('user.searchByName') }}">Users</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">Appointments</a>
