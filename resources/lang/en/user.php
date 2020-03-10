@@ -34,5 +34,6 @@ return[
   'age' => 'Age',
   'back' => 'Back',
   'delete' => 'Delete',
+  'addAppointment' => 'Add appointment',
 
 ];

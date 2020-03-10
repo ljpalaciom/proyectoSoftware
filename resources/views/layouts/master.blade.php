@@ -33,7 +33,7 @@
               <a class="nav-link" href="{{ route('home.user') }}">Records</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.user') }}">Appointments</a>
+              <a class="nav-link" href="{{ route('appointment.listUser', Auth::user()->getId()) }}">Appointments</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 2)
@@ -44,7 +44,7 @@
               <a class="nav-link" href="{{ route('user.listUsersTrainer') }}">Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('user.listUsersTrainer') }}">Appointments</a>
+              <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">Appointments</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 3)

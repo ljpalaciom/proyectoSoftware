@@ -4,8 +4,11 @@
 
 @section('content')
 <div class="container">
+
   <div class="row justify-content-center">
+
     <div class="col-md-8">
+
       <div class="card">
         <div class="card-header">{{ $data["user"]->getName() }}</div>
         <div class="card-body">
@@ -13,6 +16,8 @@
           <b>{{ __('user.lastName') }}:</b> {{ $data["user"]->getLastName() }}<br />
           <b>{{ __('user.age') }}:</b> {{ $data["user"]->getAge() }}<br />
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
+          <br />
+          <a type="button" class="btn btn-outline-dark" href="{{ route('appointment.create')}}" >{{ __('user.addAppointment') }}</a>
         </div>
         <br />
       </div>

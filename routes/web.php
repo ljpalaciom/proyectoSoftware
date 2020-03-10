@@ -37,11 +37,15 @@ Route::post('admin/user/delete/{id}', 'UserController@delete')->name("user.delet
 //User
 Route::get('trainer/user/usersList', 'UserController@listUsers')->name("user.listUsersTrainer")->middleware('checkTrainer');
 Route::get('trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkTrainer');
-
 //Appointment
+Route::get('trainer/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.listTrainer")->middleware('checkTrainer');
+
+//Users routes
+//Appointment
+Route::get('/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.listUser")->middleware('checkUser');
+
 Route::get('/appointment/create', 'AppointmentController@create')->name("appointment.create");
 Route::post('/appointment/save', 'AppointmentController@save')->name("appointment.save");
-Route::get('/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.list");
 Route::post('/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.delete");
 
 
