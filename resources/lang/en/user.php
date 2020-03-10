@@ -20,6 +20,9 @@ return[
   'search' => 'Search',
 
 
+  'selectView' => 'Select view',
+  'training' => 'Training',
+  'records' => 'Record',
   //list
   'orderByName' => 'Order by name',
   'orderById' => 'Order by id',
