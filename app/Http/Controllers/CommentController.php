@@ -7,7 +7,7 @@ use App\Exercise;
 use Auth;
 
 use App\Interfaces\VideoStorage;
-class commentController extends Controller
+class CommentController extends Controller
 {
 
   public function create($exerciseId)

@@ -27,11 +27,11 @@
       <tr>
         <th scope="row">
           @if($loop->index < 2)
-          <a class="navbar-brand" href="{{ route('user.show', $user->getId() ) }}" style="color:black">
+          <a class="navbar-brand" href="{{ route('user.showTrainer', $user->getId() ) }}" style="color:black">
             <b>{{ $user->getId() }}</b>
           </a>
           @else
-          <a class="navbar-brand" href="{{ route('user.show', $user->getId() ) }}" style="color:blue">
+          <a class="navbar-brand" href="{{ route('user.showTrainer', $user->getId() ) }}" style="color:blue">
             {{ $user->getId() }}
           </a>
           @endif

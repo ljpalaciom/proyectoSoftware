@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
+use App\Training;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -32,8 +33,12 @@ class UserController extends Controller
     $data['user'] = $user;
     if(Auth::user()->getRole() == 3){
       return view('user.showAdmin')->with('data', $data);
+    }else{
+      $trainings = Training::where('user_id', $user->getId())->orderBy('day')->get();
+      $data['trainings'] = $trainings;
+      return view('user.showTrainer')->with('data', $data);
     }
-    return view('user.showTrainer')->with('data', $data);
+
   }
 
   public function listUsers()

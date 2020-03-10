@@ -40,12 +40,12 @@ Route::get('admin/user/trainersList', 'UserController@listTrainers')->name("user
 Route::get('admin/user/usersList/byName', 'UserController@listByName')->name("user.listByNameAdmin")->middleware('checkAdmin');
 Route::get('admin/user/show/{id}', 'UserController@show')->name("user.showAdmin")->middleware('checkAdmin');
 Route::post('admin/user/delete/{id}', 'UserController@delete')->name("user.deleteAdmin")->middleware('checkAdmin');
-Route::get('/user/search', 'UserController@search')->name("user.search");
-Route::get('/user/searchByName', 'UserController@searchByName')->name("user.searchByName");
+
 
 //Trainer routes
 //User
-Route::get('trainer/user/usersList', 'UserController@listUsers')->name("user.listUsersTrainer")->middleware('checkTrainer');
+Route::get('trainer/user/search', 'UserController@search')->name("user.search");
+Route::get('trainer/user/searchByName', 'UserController@searchByName')->name("user.searchByName");
 Route::get('trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkTrainer');
 //Appointment
 Route::get('trainer/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.listTrainer")->middleware('checkTrainer');
@@ -74,3 +74,7 @@ Route::get('/comment/sort/{order}', 'CommentController@sort')->name("comment.sor
 Route::post('/comment/delete/{id}', 'CommentController@delete')->name("comment.delete")->middleware('checkAdmin');
 
 
+//Training
+Route::get('trainer/training/create/{id}', 'TrainingController@create')->name("training.create");
+Route::get('trainer/training/show/{id}', 'TrainingController@show')->name("training.show");
+Route::post('trainer/training/save/{id}', 'TrainingController@save')->name("training.save");
