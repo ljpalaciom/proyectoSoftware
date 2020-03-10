@@ -32,14 +32,14 @@ class TrainingController extends Controller
     return redirect("/trainer/user/show/" . strval($id));
   }
 
-  public function show($trainingId)
-  {
-    $data = []; //to be sent to the view
-    $data["title"] = __('training.trainingTitle');
-    $data["training_id"] = $trainingId;
-
-    return view('training.create')->with("data", $data);
-  }
+  // public function show($trainingId)
+  // {
+  //   $data = []; //to be sent to the view
+  //   $data["title"] = __('training.trainingTitle');
+  //   $data["training_id"] = $trainingId;
+  //
+  //   return view('training.create')->with("data", $data);
+  // }
 
 
 /*

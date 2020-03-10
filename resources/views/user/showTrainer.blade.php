@@ -38,7 +38,7 @@
               <td> {{ $training->getName() }}</td>
               <td> {{ $training->getDay() }}</td>
               <td> {{ $training->getDuration() }}</td>
-              <td><a href="{{ route('training.show', ['id' =>$training->getId()] ) }}"> {{__('training.show')}} </a></td>
+              <td><a href="{{ route('routine.list', ['trainingId' =>$training->getId()] ) }}"> {{__('training.show')}} </a></td>
             </tr>
             @endforeach
           </tbody>
