@@ -64,11 +64,13 @@ class RecordController extends Controller
   }
 
 
-    public function save(Request $request){
+    public function save(Request $request, $id){
 
       Record::validate($request);
-      //TODO: Arreglar guardar, falta user_id
-      Record::create($request->only(["name","weight","height","imc"]));
+      $fields = $request->only(["name","weight","height","imc"]);
+      $fields['user_id'] = $id;
+      //TODO: FIX
+      Record::create($fields);
       return back()->with('success',__('record.recordCreated'));
     }
 
