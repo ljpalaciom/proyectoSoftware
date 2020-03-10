@@ -19,8 +19,10 @@ use Illuminate\Support\Str;
 
 $factory->define(Appointment::class, function (Faker $faker) {
     return [
-        'date' => $faker->DateTime,
+        'date' => $faker->Date,
+        'time' => $faker->Time,
         'description' => $faker->text,
         'user_id' => $faker->numberBetween($min = 1, $max = 5),
+        'trainer_id' => $faker->numberBetween($min = 1, $max = 5),
     ];
 });

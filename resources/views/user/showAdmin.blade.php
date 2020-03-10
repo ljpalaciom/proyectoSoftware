@@ -15,7 +15,7 @@
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
         </div>
         <br />
-        <form method="POST" action="{{ route('user.deleteAdmin', $data['user']->getId(), $data['user']->getRole()) }}">
+        <form method="POST" action="{{ route('user.deleteAdmin', $data['user']->getId()) }}">
           @csrf
           <div class="row justify-content-center">
             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{ __('user.delete') }}</button>
