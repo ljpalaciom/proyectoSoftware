@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -11,12 +13,13 @@ class UserController extends Controller
   {
     $data = []; //to be sent to the view
     $data['title'] = __('user.createUser');
-    return view('user.create')->with('data', $data);
+    return view('user.createAdmin')->with('data', $data);
   }
 
   public function save(Request $request)
   {
     User::validate($request);
+    $request['password'] = Hash::make($request->input('password'));
     User::create($request->only(['name', 'last_name', 'age', 'email', 'password', 'role']));
     return back()->with('success', __('user.userCreated'));
   }
@@ -27,28 +30,45 @@ class UserController extends Controller
     $user = User::findOrFail($id);
     $data['title'] = $user->getName();
     $data['user'] = $user;
-    return view('user.show')->with('data', $data);
+    if(Auth::user()->getRole() == 3){
+      return view('user.showAdmin')->with('data', $data);
+    }
+    return view('user.showTrainer')->with('data', $data);
   }
 
-  public function list()
+  public function listUsers()
   {
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
-    $data['users'] = User::all();
-    return view('user.list')->with('data', $data);
+    $data['users'] = User::where('role', 1)->get();
+    if(Auth::user()->getRole() == 3){
+      return view('user.listUsersAdmin')->with('data', $data);
+    }
+    return view('user.listUsersTrainer')->with('data', $data);
+  }
+
+  public function listTrainers()
+  {
+    $data = []; //to be sent to the view
+    $data['title'] = __('user.trainersList');
+    $data['users'] = User::where('role', 2)->get();
+    return view('user.listTrainersAdmin')->with('data', $data);
   }
 
   public function listByName()
   {
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
-    $data['users'] = User::orderBy('name')->get();
-    return view('user.list')->with('data', $data);
+    $data['users'] = User::where('role', 1)->orderBy('name')->get();
+    return view('user.listUsersAdmin')->with('data', $data);
   }
 
-  public function delete($id){
+  public function delete($id, $role){
     User::destroy($id);
-    return redirect('user/list');
+    if($role == 2){
+      return redirect('admin/user/listTrainers');
+    }
+    return redirect('admin/user/listUsers');
   }
 
 }
