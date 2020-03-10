@@ -30,7 +30,10 @@ class UserController extends Controller
     $user = User::findOrFail($id);
     $data['title'] = $user->getName();
     $data['user'] = $user;
-    return view('user.showAdmin')->with('data', $data);
+    if(Auth::user()->getRole() == 3){
+      return view('user.showAdmin')->with('data', $data);
+    }
+    return view('user.showTrainer')->with('data', $data);
   }
 
   public function listUsers()
@@ -41,6 +44,7 @@ class UserController extends Controller
     if(Auth::user()->getRole() == 3){
       return view('user.listUsersAdmin')->with('data', $data);
     }
+    return view('user.listUsersTrainer')->with('data', $data);
   }
 
   public function listTrainers()

@@ -41,7 +41,10 @@
               Home
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.trainer') }}">Users</a>
+              <a class="nav-link" href="{{ route('user.listUsersTrainer') }}">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.listUsersTrainer') }}">Appointments</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 3)

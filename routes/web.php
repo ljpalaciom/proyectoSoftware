@@ -27,16 +27,16 @@ Route::get('/admin', 'HomeController@admin')->name("home.admin");
 //User
 Route::post('admin/user/save', 'UserController@save')->name("user.saveAdmin")->middleware('checkAdmin');
 Route::get('admin/user/create', 'UserController@create')->name("user.createAdmin")->middleware('checkAdmin');
-
 Route::get('admin/user/usersList', 'UserController@listUsers')->name("user.listUsersAdmin")->middleware('checkAdmin');
 Route::get('admin/user/trainersList', 'UserController@listTrainers')->name("user.listTrainersAdmin")->middleware('checkAdmin');
 Route::get('admin/user/usersList/byName', 'UserController@listByName')->name("user.listByNameAdmin")->middleware('checkAdmin');
 Route::get('admin/user/show/{id}', 'UserController@show')->name("user.showAdmin")->middleware('checkAdmin');
 Route::post('admin/user/delete/{id}', 'UserController@delete')->name("user.deleteAdmin")->middleware('checkAdmin');
 
-
-//Route::get('/user/create', 'UserController@create')->name("user.create")->middleware('checkAdmin');
-
+//Trainer routes
+//User
+Route::get('trainer/user/usersList', 'UserController@listUsers')->name("user.listUsersTrainer")->middleware('checkTrainer');
+Route::get('trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkTrainer');
 
 //Appointment
 Route::get('/appointment/create', 'AppointmentController@create')->name("appointment.create");
