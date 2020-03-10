@@ -17,7 +17,7 @@
           <th scope="col">{{ __('appointment.time') }}</th>
           <th scope="col">{{ __('appointment.trainer') }}</th>
           <th scope="col">{{ __('appointment.description') }}</th>
-          <th scope="col"></th>
+          <th scope="col">{{ __('appointment.cancel') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,7 @@
         <tr>
           <td> {{ $appointment->getDate() }} </td>
           <td> {{ $appointment->getTime() }} </td>
-          <td> {{ $appointment->getTrainerId() }} </td>
+          <td> {{ $appointment->getTrainerName() }} </td>
           <td> {{ $appointment->getDescription() }} </td>
           <td>
             @if(Auth::user()->getRole() == 2)

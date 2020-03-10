@@ -79,6 +79,16 @@ class Appointment extends Model
         $this->attributes['trainer_id'] = $trainerId;
     }
 
+    public function getTrainerName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setTrainerName($trainerName)
+    {
+        $this->attributes['name'] = $trainerName;
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

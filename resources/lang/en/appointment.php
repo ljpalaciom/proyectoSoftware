@@ -17,6 +17,7 @@ return[
   'time' => 'Time',
   'trainer' => 'Trainer',
   'description' => 'Description',
+  'cancel' => 'Cancel',
   'noAppointments' => 'You do not have any appointments yet',
 
 ];

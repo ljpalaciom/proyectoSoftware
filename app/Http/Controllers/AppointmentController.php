@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Appointment;
+use App\User;
 
 class AppointmentController extends Controller
 {
@@ -30,7 +31,11 @@ class AppointmentController extends Controller
   {
     $data = []; //to be sent to the view
     $data['title'] = __('appointment.list');
-    $data['appointments'] = Appointment::where('user_id', $userId)->get();
+
+    $data['appointments'] = Appointment::join('users','users.id' , '=', 'appointments.trainer_id')
+    ->select('appointments.*', 'users.name')
+    ->where('user_id', $userId)->get();
+    //$data['appointments'] = Appointment::where('user_id', $userId)->get();
     return view('appointment.list')->with('data', $data);
   }
 
