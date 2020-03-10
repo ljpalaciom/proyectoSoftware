@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Record;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -17,13 +18,13 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Record::class, function (Faker $faker) {
+    $users = User::all()->pluck('id')->toArray();
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
-        'role' => $faker->numberBetween($min = 1, $max = 3)
+        'weight' => $faker->numberBetween($min = 20.0, $max = 200.0),
+        'height' => $faker->numberBetween($min = 20.0, $max = 200.0),
+        'imc' => $faker->numberBetween($min = 40.0, $max = 50.0),
+        'user_id' => $faker->randomElement($users),
     ];
 });
