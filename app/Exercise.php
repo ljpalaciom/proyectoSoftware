@@ -77,4 +77,8 @@ class Exercise extends Model
     return $this->belongsTo(Routine::class);
   }
 
+  public function comment(){
+    return $this->hasMany(Comment::class);
+  }
+
 }

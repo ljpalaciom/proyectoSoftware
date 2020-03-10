@@ -9,7 +9,7 @@ return[
   'create' => 'Create',
   'date' => 'Date',
   'insertDescription' => 'Insert description...',
-
+  'newAppointment' => 'You have a new appointment: ',
 
   //list
   'list' => 'List of appointments',

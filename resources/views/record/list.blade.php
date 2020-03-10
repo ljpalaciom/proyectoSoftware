@@ -24,6 +24,7 @@
                   <a class="dropdown-item" href="{{route('record.sort', 'created_at' ) }}">{{__('record.date')}}</a>
                 </div>
               </div>
+
               <br />
               <table  class="table table table-striped table-bordered">
                 <!-- ADD HEADERS -->

@@ -12,7 +12,10 @@ return [
     'weightField' => 'Weight',
     'heightField' => 'Height',
     'imcField' => 'IMC',
-
+    'hello' => 'Hello',
+    'history' => ', here is the history of records',
+    'excel' => 'Export to Excel',
+    'pdf' => 'Export to PDF',
 
     //list and details
     'addRecord' => 'Add record',

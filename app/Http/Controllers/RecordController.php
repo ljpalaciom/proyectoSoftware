@@ -5,6 +5,10 @@ use App\Record;
 use App\Charts\RecordChart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\RecordExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Mail;
+use PDF;
 
 class RecordController extends Controller
 {
@@ -14,6 +18,23 @@ class RecordController extends Controller
     $data["title"] = __('record.recordTitle');
     $data["userId"] = $id;
     return view('record.create')->with("data",$data);
+  }
+
+  public function export(){
+
+    return (new RecordExport(Auth::user()->getId()))->download('gym.xlsx');
+  }
+
+  public function exportPDF(){
+    $record = Record::where('user_id', Auth::user()->getId())->get();
+    $data =
+    [
+      'name' => Auth::user()->getName(),
+      'message' => $record
+    ];
+
+    $pdf = PDF::loadView('record.pdf', $data);
+    return $pdf->download('gym.pdf');
   }
 
   public function list(){

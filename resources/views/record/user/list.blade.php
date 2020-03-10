@@ -5,7 +5,6 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-
         <div class="card-header">{{__('record.listTitle')}}</div>
         <div class="col-md-12 mx-auto">
           {!! $chart->container() !!}
@@ -13,19 +12,8 @@
         <div class="card-body">
           <div class="row p-5">
             <div class="col-md-12">
-
-              <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                  {{__('record.sortBy')}}
-                </button>
-
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{{route('record.sort', 'weight' ) }}">{{__('record.weight')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'height' ) }}">{{__('record.height')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'imc' ) }}">{{__('record.imc')}}</a>
-                  <a class="dropdown-item" href="{{route('record.sort', 'created_at' ) }}">{{__('record.date')}}</a>
-                </div>
-              </div>
+              <a href="{{ route('record.export') }}">{{__('record.excel')}}&nbsp;&nbsp;</a>
+              <a href="{{ route('record.exportPDF') }}">{{__('record.pdf')}}</a>
               <br />
               <table  class="table table table-striped table-bordered">
                 <!-- ADD HEADERS -->

@@ -93,7 +93,7 @@ class Appointment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function appointment(){
+    public function trainer(){
         return $this->belongsTo(User::class);
     }
 

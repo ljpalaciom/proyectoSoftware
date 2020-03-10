@@ -57,9 +57,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('user.listTrainersAdmin') }}">Trainers</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.admin') }}">Exercise</a>
-            </li>
             @endif
             @endguest
           </ul>
