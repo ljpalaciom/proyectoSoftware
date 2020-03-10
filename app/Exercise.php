@@ -14,7 +14,7 @@ class Exercise extends Model
   public static function validate(Request $request){
     $request->validate([
       'name' => 'required|min:3',
-      'video' => 'file|mimes:avi,mp4|max:1000'
+      'video' => 'file|mimes:avi,mp4|max:5000'
     ]);
   }
 
@@ -75,6 +75,10 @@ class Exercise extends Model
 
   public function routine(){
     return $this->belongsTo(Routine::class);
+  }
+
+  public function comment(){
+    return $this->hasMany(Comment::class);
   }
 
 }

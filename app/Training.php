@@ -69,4 +69,9 @@ class Training extends Model
     return $this->belongsTo(User::class);
   }
 
+  public function routines(){
+    return $this->hasMany(Routine::class);
+  }
+
+
 }

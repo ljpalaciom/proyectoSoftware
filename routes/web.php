@@ -23,6 +23,8 @@ Route::get('/trainer/record/create/{id}', 'RecordController@create')->name("reco
 Route::post('/trainer/record/save/{id}', 'RecordController@save')->name("record.save")->middleware('checkTrainer');
 Route::get('/record/sort/{order}','RecordController@sort')->name("record.sort");
 Route::get('/record/list', 'RecordController@list')->name("record.list");
+Route::get('/record/export', 'RecordController@export')->name("record.export");
+Route::get('/record/exportPDF', 'RecordController@exportPDF')->name("record.exportPDF");
 Route::post('/trainer/record/delete/{id}', 'RecordController@delete')->name("record.delete")->middleware('checkTrainer');
 Route::get('/trainer/record/show/{id}', 'RecordController@show')->name("record.show")->middleware('checkTrainer');
 

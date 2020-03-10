@@ -40,4 +40,7 @@ return[
   'delete' => 'Delete',
   'addAppointment' => 'Add appointment',
 
+
+  
+
 ];

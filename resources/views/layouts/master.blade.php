@@ -46,6 +46,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">Appointments</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('exercise.list') }}">Exercises</a>
+            </li>
             @endif
             @if (Auth::user()->getRole() == 3)
             <a class="navbar-brand" href="{{ route('home.admin') }}">
@@ -56,9 +59,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('user.listTrainersAdmin') }}">Trainers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.admin') }}">Exercise</a>
             </li>
             @endif
             @endguest
