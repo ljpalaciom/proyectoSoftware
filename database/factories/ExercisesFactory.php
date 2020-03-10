@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Exercise;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,15 +17,13 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Exercise::class, function (Faker $faker) {
+
     return [
-        'name' => $faker->name,
-        'last_name' => $faker->lastName,
-        'age' => $faker->numberBetween($min = 12, $max = 70),
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
-        'remember_token' => Str::random(10),
-        'role' => $faker->numberBetween($min = 1, $max = 3)
+      'name' => $faker->realText($maxNbChars = 10),
+      'description' => $faker->realText($maxNbChars = 150),
+      'recommendations'  => $faker->realText($maxNbChars = 150),
+      'path_video'  => $faker->mimeType
     ];
-});
+
+  });
