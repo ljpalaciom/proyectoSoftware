@@ -13,7 +13,9 @@ return [
     'heightField' => 'Height',
     'imcField' => 'IMC',
 
+
     //list and details
+    'addRecord' => 'Add record',
     'list' => 'List records',
     'listTitle' => 'List records',
     'detailTitle' => 'Record details',

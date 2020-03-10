@@ -18,8 +18,8 @@ Route::get('/', function () {
 //Login routes
 Auth::routes(['register' => false]);
 
-Route::get('/record/create', 'RecordController@create')->name("record.create");
-Route::post('/record/save', 'RecordController@save')->name("record.save");
+Route::get('/record/create/{id}', 'RecordController@create')->name("record.create");
+Route::post('/record/save/{id}', 'RecordController@save')->name("record.save");
 Route::get('/record/sort/{order}','RecordController@sort')->name("record.sort");
 Route::get('/record/list', 'RecordController@list')->name("record.list");
 Route::post('/record/delete/{id}', 'RecordController@delete')->name("record.delete");
@@ -47,6 +47,7 @@ Route::post('admin/user/delete/{id}', 'UserController@delete')->name("user.delet
 Route::get('trainer/user/search', 'UserController@search')->name("user.search");
 Route::get('trainer/user/searchByName', 'UserController@searchByName')->name("user.searchByName");
 Route::get('trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkTrainer');
+Route::get('trainer/user/show/swipe/{type}', 'UserController@swipeView')->name("user.swipeView")->middleware('checkTrainer');
 //Appointment
 Route::get('trainer/appointment/list/{user_id}', 'AppointmentController@list')->name("appointment.listTrainer")->middleware('checkTrainer');
 //Exercise
@@ -81,6 +82,7 @@ Route::post('/trainer/routine/delete/{id}', 'RoutineController@delete')->name("r
 
 
 //Training
-Route::get('trainer/training/create/{id}', 'TrainingController@create')->name("training.create");
-Route::get('trainer/training/show/{id}', 'TrainingController@show')->name("training.show");
-Route::post('trainer/training/save/{id}', 'TrainingController@save')->name("training.save");
+Route::get('/trainer/training/create/{id}', 'TrainingController@create')->name("training.create")->middleware('checkTrainer');
+Route::get('/trainer/training/show/{id}', 'TrainingController@show')->name("training.show")->middleware('checkTrainer');
+Route::post('/trainer/training/save/{id}', 'TrainingController@save')->name("training.save")->middleware('checkTrainer');
+Route::post('/trainer/training/delete/{id}', 'TrainingController@delete')->name("training.delete")->middleware('checkTrainer');

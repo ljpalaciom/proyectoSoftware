@@ -16,10 +16,8 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('record.save') }}">
+          <form method="POST" action="{{ route('record.save', $data["userId"]) }}">
             @csrf
-            <input type="text" class="form-control" placeholder="{{__('record.nameField')}}" name="name" value="{{ old('name') }}" />
-            <br />
             <input type="text"  class="form-control" placeholder="{{__('record.weightField')}}" name="weight" value="{{ old('weight') }}" />
             <br />
             <input type="text"  class="form-control" placeholder="{{__('record.heightField')}}" name="height" value="{{ old('height') }}" />

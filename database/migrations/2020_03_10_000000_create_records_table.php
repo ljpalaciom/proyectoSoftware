@@ -15,7 +15,6 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('name');
             $table->double('weight');
             $table->double('height');
             $table->double('imc');
