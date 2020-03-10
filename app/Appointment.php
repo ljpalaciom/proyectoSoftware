@@ -3,18 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use App\User;
 class Appointment extends Model
 {
 
-    //Atributes id, date, description, user_id, created_at, updated_at
-    protected $fillable = ['date','description','user_id'];
+    //Atributes id, date, time, description, user_id, created_at, updated_at
+    protected $fillable = ['date','time','description', 'trainer_id', 'user_id'];
 
     public static function validate(Request $request){
       $request->validate([
         'date' => 'required',
-        'description' => 'required',
-        'user_id' => 'required',
+        'time' => 'required',
+        'description' => 'required'
       ]);
     }
 
@@ -38,6 +39,16 @@ class Appointment extends Model
         $this->attributes['date'] = $date;
     }
 
+    public function getTime()
+    {
+        return $this->attributes['time'];
+    }
+
+    public function setTime($time)
+    {
+        $this->attributes['time'] = $time;
+    }
+
     public function getDescription()
     {
         return $this->attributes['description'];
@@ -58,7 +69,21 @@ class Appointment extends Model
         $this->attributes['user_id'] = $userId;
     }
 
+    public function getTrainerId()
+    {
+        return $this->attributes['trainer_id'];
+    }
+
+    public function setTrainerId($trainerId)
+    {
+        $this->attributes['trainer_id'] = $trainerId;
+    }
+
     public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function appointment(){
         return $this->belongsTo(User::class);
     }
 

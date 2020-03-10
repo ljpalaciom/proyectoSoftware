@@ -121,10 +121,8 @@ class User extends  Authenticatable
     public function records(){
       return $this->hasMany(Record::class);
     }
-    
-    /**
+
     public function appointment(){
         return $this->hasMany(Appointment::class);
     }
-    */
 }

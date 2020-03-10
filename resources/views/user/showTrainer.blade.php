@@ -17,7 +17,7 @@
           <b>{{ __('user.age') }}:</b> {{ $data["user"]->getAge() }}<br />
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
           <br />
-          <a type="button" class="btn btn-outline-dark" href="{{ route('appointment.create')}}" >{{ __('user.addAppointment') }}</a>
+          <a type="button" class="btn btn-outline-dark" href="{{ route('appointment.create', $data['user']->getId() )}}" >{{ __('user.addAppointment') }}</a>
         </div>
         <br />
       </div>
