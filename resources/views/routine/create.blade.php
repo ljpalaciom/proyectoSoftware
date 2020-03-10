@@ -18,20 +18,22 @@
 
           <form method="POST" action="{{ route('routine.save') }}">
             @csrf
-            <input type="hidden" name="training_id" value="{$data['training_id']}">
-            <input type="text" class="form-control" placeholder="{{__('routine.repetitionsField')}}" name="repetitions" value="{{ old('repetitions') }}" />
+            <input type="hidden" name="training_id" value="{{$data['training_id']}}">
+            <input type="number" min=0 class="form-control" placeholder="{{__('routine.repetitionsField')}}" name="repetitions" value="{{ old('repetitions') }}" />
             <br />
-            <input type="text"  class="form-control" placeholder="{{__('routine.sequencesField')}}" name="sequences" value="{{ old('sequences') }}" />
+            <input type="number" min=0  class="form-control" placeholder="{{__('routine.sequencesField')}}" name="sequences" value="{{ old('sequences') }}" />
             <br />
-            <input type="text"  class="form-control" placeholder="{{__('routine.secondsToRestField')}}" name="seconds" value="{{ old('seconds') }}" />
+            <input type="number" min=0  class="form-control" placeholder="{{__('routine.secondsToRestField')}}" name="seconds_to_rest" value="{{ old('seconds') }}" />
             <br />
             <select class="custom-select" name="exercise_id">
               <option selected>{{__('routine.select')}}</option>
               @foreach($data["exercises"] as $exercise)
-              <option value="{{$exercise.getId()}}">{{$exercise.getName()}}</option>
+              <option value="{{$exercise->getId()}}">{{$exercise->getName()}}</option>
               @endforeach
 
             </select>
+            <br />
+            <br />
             <input type="submit" class="btn btn-primary form-control" value="{{__('routine.create')}}" />
           </form>
 

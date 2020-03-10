@@ -23,5 +23,6 @@ return [
     'createdAtField' => 'Created at',
     'remove' => 'Delete routine',
     'removeButton' => 'Delete',
-    'select' => 'select exercise'
+    'exerciseName' => 'Exercise name',
+    'select' => 'Select exercise'
 ];

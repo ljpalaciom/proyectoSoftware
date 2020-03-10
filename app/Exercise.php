@@ -73,4 +73,8 @@ class Exercise extends Model
     $this->attributes['recommendations'] = $recommendations;
   }
 
+  public function routine(){
+    return $this->belongsTo(Routine::class);
+  }
+
 }

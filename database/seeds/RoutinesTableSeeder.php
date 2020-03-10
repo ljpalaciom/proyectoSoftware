@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Routine;
 
-class CommentsTableSeeder extends Seeder
+class RoutinesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
