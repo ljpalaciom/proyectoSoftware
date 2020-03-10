@@ -4,8 +4,11 @@
 
 @section('content')
 <div class="container">
+
   <div class="row justify-content-center">
+
     <div class="col-md-8">
+
       <div class="card">
         <div class="card-header">{{ $data["user"]->getName() }}</div>
         <div class="card-body">
@@ -13,17 +16,10 @@
           <b>{{ __('user.lastName') }}:</b> {{ $data["user"]->getLastName() }}<br />
           <b>{{ __('user.age') }}:</b> {{ $data["user"]->getAge() }}<br />
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
-        </div>
-        <div align="center">
-          <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}" style="right:50%;" >{{ __('user.back') }}</a>
+          <br />
+          <a type="button" class="btn btn-outline-dark" href="{{ route('appointment.create')}}" >{{ __('user.addAppointment') }}</a>
         </div>
         <br />
-        <form method="POST" action="{{ route('user.delete', $data['user']->getId()) }}">
-          @csrf
-          <div class="row justify-content-center">
-            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{ __('user.delete') }}</button>
-          </div>
-        </form>  
       </div>
     </div>
   </div>

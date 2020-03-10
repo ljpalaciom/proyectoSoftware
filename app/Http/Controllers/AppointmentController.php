@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Appointment;
 
 class AppointmentController extends Controller
@@ -35,5 +36,7 @@ class AppointmentController extends Controller
     Appointment::destroy($id);
     return redirect('appointment/list');
   }
+
+
 
 }

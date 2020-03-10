@@ -9,5 +9,8 @@ return[
 
   //list
   'list' => 'List of appointments',
+  'date' => 'Date',
+  'description' => 'Description',
+  'noAppointments' => 'You do not have any appointments yet',
 
 ];

@@ -5,11 +5,10 @@
 @section('content')
 <div class="container">
   <div align="left">
-    <a type="button" class="btn btn-outline-dark" href="{{ route('user.listByName')}}" >{{ __('user.orderByName') }}</a>
-    <a type="button" class="btn btn-outline-dark" href="{{ route('user.list')}}">{{ __('user.orderById') }}</a>
+    <a type="button" class="btn btn-success" href="{{ route('user.createAdmin')}}">{{ __('user.create') }}</a>
   </div>
   <br />
-  <h1 align="center">{{ __('user.list') }}</h1>
+  <h1 align="center">{{ __('user.trainersList') }}</h1>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -22,15 +21,9 @@
       @foreach($data["users"] as $user)
       <tr>
         <th scope="row">
-          @if($loop->index < 2)
-          <a class="navbar-brand" href="{{ route('user.show', $user->getId() ) }}" style="color:black">
+          <a class="navbar-brand" href="{{ route('user.showAdmin', $user->getId() ) }}" style="color:black">
             <b>{{ $user->getId() }}</b>
           </a>
-          @else
-          <a class="navbar-brand" href="{{ route('user.show', $user->getId() ) }}" style="color:blue">
-            {{ $user->getId() }}
-          </a>
-          @endif
         </th>
         <td> {{ $user->getName() }} </td>
         <td> {{ $user->getEmail() }} </td>
