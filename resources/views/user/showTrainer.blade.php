@@ -53,7 +53,7 @@
                 <td> {{ $training->getName() }}</td>
                 <td> {{ $training->getDay() }}</td>
                 <td> {{ $training->getDuration() }}</td>
-                <td><a href="{{ route('routine.list', ['trainingId' => $data["user"]->getId()] ) }}"> {{__('training.show')}} </a></td>
+                <td><a href="{{ route('routine.listTrainer', ['trainingId' => $data["user"]->getId()] ) }}"> {{__('training.show')}} </a></td>
                 <td>
                   <form method="POST" action="{{ route('training.delete', ['id' => $training->getId()] ) }}">
                     @csrf
