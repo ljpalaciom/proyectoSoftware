@@ -30,7 +30,7 @@ class CommentController extends Controller
     $data = []; // to be sent to the view
     $data["title"] =  __('comment.listTitle');
     if ($order == 'Exercises.name'){
-      $data["comments"] = Comment::join('Exercises', 'Exercises.id', '=', 'Comments.exercise_id')
+      $data["comments"] = Comment::join('exercises', 'exercises.id', '=', 'comments.exercise_id')
        ->orderBy($order)
        ->select('Comments.*')
        ->with('user', 'exercise')->get();
