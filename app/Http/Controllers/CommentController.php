@@ -32,7 +32,7 @@ class CommentController extends Controller
     if ($order == 'Exercises.name'){
       $data["comments"] = Comment::join('exercises', 'exercises.id', '=', 'comments.exercise_id')
        ->orderBy($order)
-       ->select('Comments.*')
+       ->select('comments.*')
        ->with('user', 'exercise')->get();
     }else{
       $data["comments"] = Comment::with('user', 'exercise')->orderBy($order)->get();

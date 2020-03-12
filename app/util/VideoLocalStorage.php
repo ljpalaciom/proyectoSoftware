@@ -13,6 +13,7 @@ class VideoLocalStorage implements VideoStorage {
       $pathVideo = "exercise/".$exercise->getId().".{$extension}";
       Storage::disk('public')->put($pathVideo, file_get_contents($request->file('video')->getRealPath()));
       $exercise->setPathVideo($pathVideo);
+      $exercise->save();
     }
   }
 }

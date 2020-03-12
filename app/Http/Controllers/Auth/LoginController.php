@@ -11,13 +11,7 @@ use App\User;
 class LoginController extends Controller
 {
   /*
-  |--------------------------------------------------------------------------
-  | Login Controller
-  |--------------------------------------------------------------------------
-  |
-  | This controller handles authenticating users for the application and
-  | redirecting them to your home screen. The controller uses a trait
-  | to conveniently provide its functionality to your applications.
+  |----------------------------------------------------------Utions.
   |
   */
 
@@ -42,13 +36,11 @@ class LoginController extends Controller
   }
 
   protected function authenticated(Request $request, User $user) {
-    $role = $user->getRole();
-    if($role && $role == 1){
-      return redirect('/');
-    }else if ($role == 2){
-      return redirect('/trainer');
-    }else if ($role == 3){
-      return redirect('/admin');
+    if($user){
+      $baseUrl = $user->getBaseUrl();
+      if ($baseUrl){
+        return redirect($baseUrl);
+      }
     }
     return redirect()->intended($this->redirectPath());
   }

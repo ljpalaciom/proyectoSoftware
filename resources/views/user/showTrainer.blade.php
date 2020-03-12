@@ -53,7 +53,7 @@
                 <td> {{ $training->getName() }}</td>
                 <td> {{ $training->getDay() }}</td>
                 <td> {{ $training->getDuration() }}</td>
-                <td><a href="{{ route('routine.listTrainer', ['trainingId' => $data["user"]->getId()] ) }}"> {{__('training.show')}} </a></td>
+                <td><a href="{{ route('routine.listTrainer', ['trainingId' => $training->getId() ] ) }}"> {{__('training.show')}} </a></td>
                 <td>
                   <form method="POST" action="{{ route('training.delete', ['id' => $training->getId()] ) }}">
                     @csrf
@@ -104,28 +104,6 @@
           @endif
         </div>
         <br />
-        <table  class="table table table-striped table-bordered">
-          <!-- ADD HEADERS -->
-          <thead>
-            <tr>
-              <th scope="col">{{__('training.name')}}</th>
-              <th scope="col">{{__('training.day')}}</th>
-              <th scope="col">{{__('training.duration')}}</th>
-              <th scope="col">{{__('training.details')}}</th>
-            </tr>
-          </thead>
-          <!-- BIND ARRAY TO TABLE -->
-          <tbody>
-            @foreach($data["trainings"] as $training)
-            <tr>
-              <td> {{ $training->getName() }}</td>
-              <td> {{ $training->getDay() }}</td>
-              <td> {{ $training->getDuration() }}</td>
-              <td><a href="{{ route('routine.listTrainer', ['trainingId' =>$training->getId()] ) }}"> {{__('training.show')}} </a></td>
-            </tr>
-            @endforeach
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
