@@ -25,7 +25,7 @@ class routineController extends Controller
     $data["title"] = __('routine.listTitle');
     Training::findOrFail($trainingId);
     $data["training_id"] = $trainingId;
-    $data["routines"] = Routine::join('Exercises', 'Exercises.id', '=', 'Routines.exercise_id')
+    $data["routines"] = Routine::join('exercises', 'exercises.id', '=', 'routines.exercise_id')
     ->select('Routines.*', 'Exercises.name')
     ->where('training_id', $trainingId)->get();
     return view('routine.list')->with("data", $data);
@@ -34,7 +34,7 @@ class routineController extends Controller
   public function retrieve($id)
   {
     $data = []; //to be sent to the views
-    $routine = Routine::join('Exercises', 'Exercises.id', '=', 'Routines.exercise_id')
+    $routine = Routine::join('exercises', 'exercises.id', '=', 'routines.exercise_id')
     ->select('Routines.*',
     'Exercises.name',
     'Exercises.description',
@@ -52,7 +52,7 @@ class routineController extends Controller
     $data["title"] = __('routine.listTitle');
     Training::findOrFail($trainingId);
     $data["training_id"] = $trainingId;
-    $data["routines"] = Routine::join('Exercises', 'Exercises.id', '=', 'Routines.exercise_id')
+    $data["routines"] = Routine::join('exercises', 'exercises.id', '=', 'routines.exercise_id')
     ->select('Routines.*', 'Exercises.name')
     ->where('training_id', $trainingId)->get();
     return view('routine.user.list')->with("data", $data);
