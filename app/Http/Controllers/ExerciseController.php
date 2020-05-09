@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exercise;
 use App\Interfaces\VideoStorage;
+use App\Interfaces\ImageStorage;
 class ExerciseController extends Controller
 {
   public function home()
@@ -55,7 +56,8 @@ class ExerciseController extends Controller
     $exercise = Exercise::create($request->only(['name', 'description', 'recommendations']));
     $storeInterface = app(VideoStorage::class);
     $storeInterface->store($request, $exercise);
-
+    $storeInterface2 = app(ImageStorage::class);
+    $storeInterface2->store($request, $exercise);
     return back()->with('success', __('exercise.exerciseCreated'));
   }
 }

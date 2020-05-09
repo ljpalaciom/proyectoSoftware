@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'age' => $faker->numberBetween($min = 12, $max = 70),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        'password' => '$2y$12$rPAB1hA6yoyt23Ks/M8pZOrLU7yCwlxl2HMT9POVfnyjig4MSdT0C',
         'remember_token' => Str::random(10),
         'role' => $faker->numberBetween($min = 1, $max = 3)
     ];
