@@ -42,10 +42,12 @@ class Routine extends Model
     return $this->attributes['exercise_id'];
   }
 
+
   public function setExerciseId($id)
   {
     $this->attributes['exercise_id'] = $id;
   }
+
   public function getRepetitions()
   {
     return $this->attributes['repetitions'];
@@ -84,7 +86,7 @@ class Routine extends Model
   }
 
   public function exercise(){
-    return $this->hasOne(Exercise::class);
+    return $this->belongsTo(Exercise::class);
   }
 
   public function training(){
