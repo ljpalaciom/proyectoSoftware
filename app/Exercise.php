@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class Exercise extends Model
 {
 
-  //Atributes id, path_video, name, description, recommendations, created_at, updated_at
-  protected $fillable = ['path_video','name', 'description', 'recommendations'];
+  //Atributes id, path_video, path_image, name, description, recommendations, created_at, updated_at
+  protected $fillable = ['path_video', 'path_image', 'name', 'description', 'recommendations'];
 
   public static function validate(Request $request){
     $request->validate([
@@ -36,6 +36,16 @@ class Exercise extends Model
   public function setPathVideo($pathVideo)
   {
     $this->attributes['path_video'] = $pathVideo;
+  }
+
+  public function getPathImage()
+  {
+    return $this->attributes['path_image'];
+  }
+
+  public function setPathImage($pathImage)
+  {
+    $this->attributes['path_image'] = $pathImage;
   }
 
   public function getName()

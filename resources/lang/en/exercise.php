@@ -12,6 +12,7 @@ return [
     'descriptionField' => 'Description',
     'recommendationsField'  => 'Recommendations',
     'videoField' => 'Video',
+    'imageField' => 'Image',
     'createdAtField' => 'Created at',
 
     //list

@@ -23,7 +23,8 @@ $factory->define(Exercise::class, function (Faker $faker) {
       'name' => $faker->realText($maxNbChars = 10),
       'description' => $faker->realText($maxNbChars = 150),
       'recommendations'  => $faker->realText($maxNbChars = 150),
-      'path_video'  => $faker->mimeType
+      'path_video'  => $faker->mimeType,
+      'path_image'  => $faker->mimeType
     ];
 
   });

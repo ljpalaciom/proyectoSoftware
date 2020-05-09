@@ -177,6 +177,7 @@ return [
         /* my providers */
         App\Providers\VideoServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        App\Providers\ImageServiceProvider::class,
 
 
 

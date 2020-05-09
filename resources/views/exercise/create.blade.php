@@ -32,7 +32,9 @@
             <div class="form-group">
               <input accept=".avi,.mp4" type="file" class="form-control-file" placeholder="{{__('exercise.videoField')}}" name="video" value="{{ old('video') }}" />
             </div>
-
+            <div class="form-group">
+              <input accept=".png,.jpg,.jpeg" type="file" class="form-control-file" placeholder="{{__('exercise.imageField')}}" name="image" value="{{ old('image') }}" />
+            </div>
             <div class="row justify-content-center">
               <input type="submit" class="btn btn-primary" value="{{__('exercise.create')}}" />
             </div>
