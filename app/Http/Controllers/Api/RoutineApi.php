@@ -19,7 +19,7 @@ class RoutineApi extends Controller
   public function index()
 
   {
-    return new RoutineCollection(RoutineResource::collection(Routine::with('exercise:id,name,description')->get()));
+    return new RoutineCollection(RoutineResource::collection(Routine::with('exercise:id,name,description,path_image')->get()));
   }
 
   public function paginate()
