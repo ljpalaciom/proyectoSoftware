@@ -63,13 +63,13 @@ Route::post('/trainer/appointment/save/{userId}', 'AppointmentController@save')-
 Route::post('/trainer/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.deleteTrainer")->middleware('checkRole:trainer');
 
 //Exercise
-Route::get('/exercise/home', 'ExerciseController@home')->name("exercise.home")->middleware('checkRole:trainer');
-Route::get('/exercise/create', 'ExerciseController@create')->name("exercise.create")->middleware('checkRole:trainer');
-Route::post('/exercise/save', 'ExerciseController@save')->name("exercise.save")->middleware('checkRole:trainer');
-Route::get('/exercise/list', 'ExerciseController@list')->name("exercise.list")->middleware('checkRole:trainer');
-Route::get('/exercise/listbydescription', 'ExerciseController@listByDescription')->name("exercise.listByDescription")->middleware('checkRole:trainer');
-Route::get('/exercise/retrieve/{id}', 'ExerciseController@retrieve')->name("exercise.retrieve")->middleware('checkRole:user');
-Route::post('/exercise/delete/{id}', 'ExerciseController@delete')->name("exercise.delete")->middleware('checkRole:trainer');
+Route::get('trainer/exercise/home', 'ExerciseController@home')->name("exercise.home")->middleware('checkRole:trainer');
+Route::get('trainer/exercise/create', 'ExerciseController@create')->name("exercise.create")->middleware('checkRole:trainer');
+Route::post('trainer/exercise/save', 'ExerciseController@save')->name("exercise.save")->middleware('checkRole:trainer');
+Route::get('trainer/exercise/list', 'ExerciseController@list')->name("exercise.list")->middleware('checkRole:trainer');
+Route::get('trainer/exercise/listbydescription', 'ExerciseController@listByDescription')->name("exercise.listByDescription")->middleware('checkRole:trainer');
+Route::get('trainer/exercise/retrieve/{id}', 'ExerciseController@retrieve')->name("exercise.retrieve")->middleware('checkRole:trainer');
+Route::post('trainer/exercise/delete/{id}', 'ExerciseController@delete')->name("exercise.delete")->middleware('checkRole:trainer');
 
 //Users routes
 //Appointment

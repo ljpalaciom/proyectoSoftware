@@ -19,10 +19,18 @@
           <b>{{__('routine.repetitionsField')}}:</b> {{ $data["routine"]->getRepetitions()}}<br />
           <b>{{__('routine.sequencesField')}}:</b> {{ $data["routine"]->getSequences() }}<br />
           <b>{{__('routine.secondsToRestField')}}:</b> {{ $data["routine"]->getSecondsToRest() }}<br />
+
+          @if($data['routine']->path_video)
           <video width="100%"controls>
-                <source src="{{ URL::asset('storage/'. $data['routine']->path_video) }}" type="video/mp4">
-                            Your browser does not support the video tag.
+            <source src="{{ URL::asset('storage/'. $data['routine']->path_video) }}" type="video/mp4" >
+              Your browser does not support the video tag.
+            </source>
           </video>
+          @endif
+
+          @if($data['routine']->path_image)
+          <img width="100%" src="{{ URL::asset('storage/'. $data['routine']->path_image) }}">
+          @endif
           <br />
 
           </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\URL;
+use Exception;
 
 class Routine extends JsonResource
 
@@ -13,8 +14,12 @@ class Routine extends JsonResource
     $exercise = $this->exercise;
     $path_image = $exercise->getPathImage();
     if(!is_null($path_image)){
+      try{
         $image = "data:image/jpeg;base64,".base64_encode(file_get_contents(URL::asset('storage/'. $path_image)));
-        $exercise->setPathImage($image);
+        $exercise->setImage($image);
+      } catch(Exception $e) { }
+    } else{
+      $exercise->setImage(NULL);
     }
 
     return [
