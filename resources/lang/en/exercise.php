@@ -3,6 +3,7 @@
 return [
      //Messages
     'exerciseCreated' => 'Exercise created successfully',
+    'exerciseUpdated' => 'Exercise updated successfully',
     'exercise' => 'Exercise',
     'createTitle' => 'Create Exercise',
 
@@ -24,6 +25,7 @@ return [
     'action' => 'Action',
 
     //show
+    'update' => 'Update',
     'remove' => 'Remove exercise',
 
 ];

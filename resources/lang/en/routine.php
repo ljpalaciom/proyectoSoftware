@@ -3,6 +3,7 @@
 return [
      //Messages
     'routineCreated' => 'Routine created successfully',
+    'routineUpdated' => 'Routine updated successfully',    
     'routine' => 'Routine',
 
     //create
@@ -25,6 +26,7 @@ return [
     'removeButton' => 'Delete',
     'exerciseName' => 'Exercise name',
     'select' => 'Select exercise',
+    'update' => 'Update',
 
     //retrieve
     'retrieveTitle' => 'Retrieve info routine',

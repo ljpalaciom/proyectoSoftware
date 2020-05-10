@@ -49,15 +49,28 @@ class AppointmentController extends Controller
       $data['appointments'] = Appointment::join('users','users.id' , '=', 'appointments.trainer_id')
       ->select('appointments.*', 'users.name')
       ->where('trainer_id', $userId)->get();
-    }else{
+    } else{
       $data['appointments'] = Appointment::join('users','users.id' , '=', 'appointments.trainer_id')
       ->select('appointments.*', 'users.name')
       ->where('user_id', $userId)->get();
     }
 
-
-    //$data['appointments'] = Appointment::where('user_id', $userId)->get();
     return view('appointment.list')->with('data', $data);
+  }
+
+  public function update($id){
+    $data = []; //to be sent to the view
+    $appointment = Appointment::findOrFail($id);
+    $data["appointment"] = $appointment;
+    $data["title"] =  __('appointment.update');
+    return view('appointment.update')->with("data",$data);
+  }
+
+  public function saveUpdate(Request $request){
+    Appointment::validate($request);
+    Appointment::where('id', $request->input("id"))
+            ->update($request->only(['date','time','description']));
+    return back()->with('success',  __('appointment.appointmentUpdated'));
   }
 
 

@@ -3,6 +3,7 @@
 return [
      //Messages
     'trainingCreated' => 'Training created successfully',
+    'trainingUpdated' => 'Training updated successfully',
     'training' => 'Training',
 
     //create
@@ -17,6 +18,8 @@ return [
     'details' => 'Details',
     'show' => 'Show',
     'addTraining' => 'Add Training',
-    'delete' => 'Delete',
 
+    //list
+    'delete' => 'Delete',
+    'update' => 'Update',
 ];
