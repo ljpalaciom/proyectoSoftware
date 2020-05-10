@@ -1,28 +1,27 @@
-FROM php:7.4-cli
+FROM php:7.2-apache-stretch
+RUN apt-get update -y && apt-get install -y openssl zip unzip git
+RUN docker-php-ext-install pdo_mysql
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng-dev \
-        zlib1g-dev \
-        libxml2-dev \
-        libzip-dev \
-        libonig-dev \
-        graphviz \
+COPY . /var/www/html
+COPY ./public/.htaccess /var/www/html/.htaccess
+WORKDIR /var/www/html
+RUN composer install \
+    --ignore-platform-reqs \
+    --no-interaction \
+    --no-plugins \
+    --no-scripts \
+    --prefer-dist
 
-    && docker-php-ext-configure gd \
-    && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install pdo_mysql \
-    && docker-php-ext-install mysqli \
-    && docker-php-ext-install zip \
-    && docker-php-source delete
-    
+RUN apt-get upgrade -y \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g react-tools
 
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
-WORKDIR /app
-COPY . /app
-RUN composer install
+RUN php artisan key:generate
 RUN php artisan storage:link
-CMD php artisan serve --host=0.0.0.0 --port=80
-EXPOSE 80
+RUN php artisan migrate
+RUN chmod -R 777 storage
+RUN a2enmod rewrite
+RUN service apache2 restart
+RUN npm install
+RUN npm run dev
