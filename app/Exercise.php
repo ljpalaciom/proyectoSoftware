@@ -48,6 +48,12 @@ class Exercise extends Model
     $this->attributes['path_image'] = $pathImage;
   }
 
+  public function setImage($image)
+  {
+    $this->attributes['image'] = $image;
+  }
+
+
   public function getName()
   {
     return $this->attributes['name'];

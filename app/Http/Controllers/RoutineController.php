@@ -39,7 +39,9 @@ class routineController extends Controller
     'exercises.name',
     'exercises.description',
     'exercises.recommendations',
-    'exercises.path_video')
+    'exercises.path_video',
+    'exercises.path_image'
+    )
     ->where('routines.id', $id)->first();
     $data["title"] =  __('routine.retrieveTitle');
     $data["routine"] = $routine;

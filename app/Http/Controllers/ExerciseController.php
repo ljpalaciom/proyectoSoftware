@@ -22,7 +22,7 @@ class ExerciseController extends Controller
   public function list()
   {
     $data = []; //to be sent to the view
-    $data["title"] = __('exercise.listTitle');
+    $data["title"] = __('exercise.titleList');
     $data["exercises"] = Exercise::all();
     return view('exercise.list')->with("data", $data);
   }
@@ -30,7 +30,7 @@ class ExerciseController extends Controller
   public function listByDescription()
   {
     $data = []; //to be sent to the view
-    $data["title"] = __('exercise.listByDescriptionTitle');
+    $data["title"] = __('exercise.listByDescription');
     $data["exercises"] = Exercise::orderBy('description')->get();
     return view('exercise.list')->with("data", $data);
   }
@@ -47,17 +47,18 @@ class ExerciseController extends Controller
   public function delete($id)
   {
     Exercise::destroy($id);
-    return redirect('exercise/list');
+    return redirect('trainer/exercise/list');
   }
 
   public function save(Request $request)
   {
     Exercise::validate($request);
     $exercise = Exercise::create($request->only(['name', 'description', 'recommendations']));
-    $storeInterface = app(VideoStorage::class);
-    $storeInterface->store($request, $exercise);
-    $storeInterface2 = app(ImageStorage::class);
-    $storeInterface2->store($request, $exercise);
+
+    $videoStoreInterface = app(VideoStorage::class);
+    $videoStoreInterface->store($request, $exercise);
+    $imageStoreInterface = app(ImageStorage::class);
+    $imageStoreInterface->store($request, $exercise);
     return back()->with('success', __('exercise.exerciseCreated'));
   }
 }

@@ -24,19 +24,21 @@
                 <th scope="col">{{__('exercise.descriptionField')}}</th>
                 <th scope="col">{{__('exercise.recommendationsField')}}</th>
                 <th scope="col">{{__('exercise.createdAtField')}}</th>
+                <th scope="col">{{__('exercise.action')}}</th>
               </tr>
             </thead>  <tbody>
               @foreach($data["exercises"] as $exercise)
               <tr>
-                @if ($loop->index < 2)
-                <th>{{$exercise->getId()}}</th>
-                @else
                 <td>{{$exercise->getId()}}</td>
-                @endif
                 <td>{{$exercise->getName()}}</td>
                 <td>{{$exercise->getDescription()}}</td>
                 <td>{{$exercise->getRecommendations()}}</td>
                 <td>{{$exercise->getCreatedAt()}}</td>
+                <td>
+                <a class="btn btn-success" href="{{ route('exercise.retrieve', $exercise->getId())}}"></i>{{__('exercise.inspect')}}</a>
+                <td/>
+
+              </td/>
               </tr>
               @endforeach
             </tbody>
