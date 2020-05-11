@@ -3,7 +3,7 @@
 return [
      //Messages
     'routineCreated' => 'Routine created successfully',
-    'routineUpdated' => 'Routine updated successfully',    
+    'routineUpdated' => 'Routine updated successfully',
     'routine' => 'Routine',
 
     //create
@@ -20,7 +20,7 @@ return [
     'sortBy' => 'Sort by',
     'inspect' => 'Inspect',
     'action' => 'Action',
-    'remove' => 'Remove routine',
+    'delete' => 'Delete',
     'createdAtField' => 'Created at',
     'remove' => 'Delete routine',
     'removeButton' => 'Delete',

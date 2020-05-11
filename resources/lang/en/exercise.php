@@ -9,11 +9,11 @@ return [
 
     //create
     'create' => 'Create exercise',
-    'nameField' => 'Name',
-    'descriptionField' => 'Description',
-    'recommendationsField'  => 'Recommendations',
-    'videoField' => 'Video',
-    'imageField' => 'Image',
+    'nameField' => 'Enter name',
+    'descriptionField' => 'Enter description',
+    'recommendationsField'  => 'Enter recommendations',
+    'videoField' => 'Enter video',
+    'imageField' => 'Enter image',
     'createdAtField' => 'Created at',
 
     //list
@@ -23,9 +23,12 @@ return [
     'listByDescription' => 'List by description',
     'inspect' => 'Inspect',
     'action' => 'Action',
+    'update' => 'Update',
 
     //show
     'update' => 'Update',
     'remove' => 'Remove exercise',
 
+    //update
+    'updateExercise' => 'Update Exercise',
 ];

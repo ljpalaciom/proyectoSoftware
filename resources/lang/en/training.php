@@ -9,9 +9,9 @@ return [
     //create
     'create' => 'Create',
     'createTitle' => 'Create training',
-    'nameField' => 'Name',
-    'dayField' => 'Day',
-    'durationField' => 'Duration',
+    'nameField' => 'Enter name',
+    'dayField' => 'Enter day',
+    'durationField' => 'Enter duration',
     'name' => 'Name',
     'day' => 'Day',
     'duration' => 'Duration',
@@ -22,4 +22,7 @@ return [
     //list
     'delete' => 'Delete',
     'update' => 'Update',
+
+    //update
+    'updateTraining' => 'Update training',
 ];

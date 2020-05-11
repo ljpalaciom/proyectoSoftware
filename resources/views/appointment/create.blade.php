@@ -8,7 +8,7 @@
     <div class="col-md-8">
       @include('util.message')
       <div class="card">
-        <div class="card-header"><center> {{ __('appointment.createAppointment') }} </center></div>
+        <div class="card-header" align="center"> {{ __('appointment.createAppointment') }}</div>
         <div class="card-body" align="center">
           @if($errors->any())
           <ul id="errors">
@@ -24,7 +24,7 @@
             <textarea class="form-control" placeholder="{{__('appointment.insertDescription')}}" name="description" value="{{ old('description') }}"></textarea>
           </div>
           <br />
-          <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}""/>
+          <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}"/>
           <input type="submit" class="btn btn-success" value="{{ __('appointment.create') }}"/>
         </form>
       </div>
