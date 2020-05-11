@@ -14,7 +14,7 @@ class Exercise extends Model
   public static function validate(Request $request){
     $request->validate([
       'name' => 'required|min:3',
-      'video' => 'file|mimes:avi,mp4|max:5000',
+      'video' => 'file|mimes:avi,mp4|max:10000',
       'image' => 'file|mimes:png,jpg,jpeg'
     ]);
   }
