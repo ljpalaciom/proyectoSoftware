@@ -41,6 +41,16 @@ return[
   'addAppointment' => 'Add appointment',
 
 
-  
+  //sponsored
+  'buy' => 'Buy',
+  'sponsored' => 'Sponsored Items',
+
+  //covid
+  'covid' => 'Latest Covid-19 information in Colombia',
+  'confirmed' => 'Confirmed',
+  'deaths' => 'Deaths',
+  'recovered' => 'Recovered'
+
+
 
 ];
