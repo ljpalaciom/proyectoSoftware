@@ -37,10 +37,24 @@ class TrainingController extends Controller
     $data = []; //to be sent to the view
     $data["title"] = __('training.trainingTitle');
     $user = Auth::user();
-    $data["trainings"] = Training::where('user_id', $user->getId())->get();    
+    $data["trainings"] = Training::where('user_id', $user->getId())->get();
     return view('training.list')->with("data", $data);
   }
 
+  public function update($id){
+    $data = []; //to be sent to the view
+    $training = Training::findOrFail($id);
+    $data["training"] = $training;
+    $data["title"] =  __('training.update');
+    return view('training.update')->with("data",$data);
+  }
+
+  public function saveUpdate(Request $request){
+    Training::validate($request);
+    Training::where('id', $request->input("id"))
+    ->update($request->only(['name','day','duration']));
+    return back()->with('success',  __('training.trainingUpdated'));
+  }
 
   public function delete($id)
   {

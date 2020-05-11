@@ -44,6 +44,21 @@ class ExerciseController extends Controller
     return view('exercise.retrieve')->with("data", $data);
   }
 
+  public function update($id){
+    $data = []; //to be sent to the view
+    $exercise = Exercise::findOrFail($id);
+    $data["exercise"] = $exercise;
+    $data["title"] =  __('exercise.update');
+    return view('exercise.update')->with("data",$data);
+  }
+
+  public function saveUpdate(Request $request){
+    Exercise::validate($request);
+    Exercise::where('id', $request->input("id"))
+            ->update($request->only(['path_video', 'path_image', 'name', 'description', 'recommendations']));
+    return back()->with('success',  __('exercise.exerciseUpdated'));
+  }
+
   public function delete($id)
   {
     Exercise::destroy($id);

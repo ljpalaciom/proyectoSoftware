@@ -77,6 +77,21 @@ class RecordController extends Controller
     return view('record.show')->with("data",$data);
   }
 
+  public function update($id){
+    $data = []; //to be sent to the view
+    $record = Record::findOrFail($id);
+    $data["record"] = $record;
+    $data["title"] =  __('record.update');
+    return view('record.update')->with("data",$data);
+  }
+
+  public function saveUpdate(Request $request){
+    Record::validate($request);
+    Record::where('id', $request->input("id"))
+    ->update($request->only(['weight', 'height','imc']));
+    return back()->with('success',  __('record.recordUpdated'));
+  }
+
   public function delete($id)
   {
     $user = Auth::user();

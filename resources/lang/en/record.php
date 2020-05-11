@@ -3,6 +3,7 @@
 return [
      //Messages
     'recordCreated' => 'Record created successfully',
+    'recordUpdated' => 'Record updated successfully',
     'record' => 'Record',
     'chartTitle' => 'Weight by month',
     //create
@@ -33,5 +34,6 @@ return [
     'show' => 'Show',
     'createdAt' => 'Created at',
     'delete' => 'Delete',
+    'update' => 'Update',
 
 ];

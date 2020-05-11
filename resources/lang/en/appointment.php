@@ -3,6 +3,7 @@
 return[
   //Messages
   'appointmentCreated' => 'Appointment created successfully',
+  'appointmentUpdated' => 'Appointment updated successfully',
 
   //Create
   'createAppointment' => 'Create appointment',
@@ -18,6 +19,7 @@ return[
   'trainer' => 'Trainer',
   'description' => 'Description',
   'cancel' => 'Cancel',
+  'update' => 'Update',
   'noAppointments' => 'You do not have any appointments yet',
 
 ];
