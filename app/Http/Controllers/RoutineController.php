@@ -64,6 +64,7 @@ class routineController extends Controller
     $data = []; //to be sent to the view
     $routine = Routine::findOrFail($id);
     $data["routine"] = $routine;
+    $data["exercises"] = Exercise::all();
     $data["title"] =  __('routine.update');
     return view('routine.update')->with("data",$data);
   }
@@ -80,6 +81,7 @@ class routineController extends Controller
     Routine::destroy($id);
     return back();
   }
+
   public function save(Request $request)
   {
     Routine::validate($request);

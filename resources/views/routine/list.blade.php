@@ -21,7 +21,8 @@
                     <th scope="col">{{__('routine.sequencesField')}}</th>
                     <th scope="col">{{__('routine.secondsToRestField')}}</th>
                     <th scope="col">{{__('routine.exerciseName')}}</th>
-                    <th scope="col">{{__('routine.remove')}}</th>
+                    <th scope="col">{{__('routine.update')}}</th>
+                    <th scope="col">{{__('routine.delete')}}</th>
                   </tr>
                 </thead>
                 <!-- BIND ARRAY TO TABLE -->
@@ -32,6 +33,9 @@
                     <td> {{ $routine->getSequences() }}</td>
                     <td> {{ $routine->getSecondsToRest() }}</td>
                     <td> {{ $routine->name }}</td>
+                    <td>
+                      <a class="btn btn-primary" href="{{ route('routine.update', ['id' => $routine->getId()])}}">{{__('routine.update')}}</a>
+                    </td>
                     <td>
                       <form method="POST" action="{{ route('routine.delete', ['id' => $routine->getId()] ) }}">
                         @csrf

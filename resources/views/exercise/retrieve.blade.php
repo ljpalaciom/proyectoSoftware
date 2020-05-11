@@ -13,11 +13,13 @@
           <b>{{__('exercise.descriptionField')}}:</b> {{ $data["exercise"]->getDescription() }}<br />
           <b>{{__('exercise.recommendationsField')}}:</b> {{ $data["exercise"]->getRecommendations() }}<br />
           <br />
-          <form method="POST" action="{{ route('exercise.delete', ['id' => $data["exercise"]->getId()] ) }}">
-            @csrf
-            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{__('exercise.remove')}}</button>
-          </form>
-
+          <div class="row justify-content-center">
+            <a class="btn btn-primary mr-4" href="{{ route('exercise.update', ['id' => $data["exercise"]->getId()])}}">{{__('exercise.update')}}</a>
+            <form method="POST" action="{{ route('exercise.delete', ['id' => $data["exercise"]->getId()] ) }}">
+              @csrf
+              <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> {{__('exercise.remove')}}</button>
+            </form>
+          </div>
           <br />
           @if($data['exercise']->getPathVideo())
           <video width="100%"controls>

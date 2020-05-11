@@ -17,7 +17,6 @@
             @endforeach
           </ul>
           @endif
-
           <form method="POST" action="{{ route('exercise.save') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">

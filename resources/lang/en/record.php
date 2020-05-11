@@ -6,13 +6,14 @@ return [
     'recordUpdated' => 'Record updated successfully',
     'record' => 'Record',
     'chartTitle' => 'Weight by month',
+
     //create
     'create' => 'Create',
     'createTitle' => 'Create record',
     'nameField' => 'Name',
-    'weightField' => 'Weight',
-    'heightField' => 'Height',
-    'imcField' => 'IMC',
+    'weightField' => 'Enter weight',
+    'heightField' => 'Enter height',
+    'imcField' => 'Enter IMC',
     'hello' => 'Hello',
     'history' => ', here is the history of records',
     'excel' => 'Export to Excel',
@@ -36,4 +37,6 @@ return [
     'delete' => 'Delete',
     'update' => 'Update',
 
+    //update
+    'updateRecord' => 'Update record',
 ];

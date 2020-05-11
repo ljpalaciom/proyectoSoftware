@@ -43,6 +43,7 @@
                 <th scope="col">{{__('training.day')}}</th>
                 <th scope="col">{{__('training.duration')}}</th>
                 <th scope="col">{{__('training.details')}}</th>
+                <th scope="col">{{__('training.update')}}</th>
                 <th scope="col">{{__('training.delete')}}</th>
               </tr>
             </thead>
@@ -54,6 +55,9 @@
                 <td> {{ $training->getDay() }}</td>
                 <td> {{ $training->getDuration() }}</td>
                 <td><a href="{{ route('routine.listTrainer', ['trainingId' => $training->getId() ] ) }}"> {{__('training.show')}} </a></td>
+                <td>
+                  <a class="btn btn-primary" href="{{ route('training.update', ['id' => $training->getId()])}}">{{__('training.update')}}</a>
+                </td>
                 <td>
                   <form method="POST" action="{{ route('training.delete', ['id' => $training->getId()] ) }}">
                     @csrf
@@ -67,7 +71,7 @@
             </tbody>
           </table>
           @else
-          <a type="button" class="btn btn-outline-dark btn-block" href="{{ route('record.create', ['id' => $data["user"]->getId()] )}}" >{{ __('record.addRecord') }}</a>
+          <a type="button" class="btn btn-outline-dark btn-block" href="{{ route('record.create', ['id' => $data["user"]->getId()] )}}">{{ __('record.addRecord') }}</a>
           <br />
           <table  class="table table table-striped table-bordered">
             <!-- ADD HEADERS -->
@@ -78,6 +82,7 @@
                 <th scope="col">{{__('record.imc')}}</th>
                 <th scope="col">{{__('record.date')}}</th>
                 <th scope="col">{{__('record.delete')}}</th>
+                <th scope="col">{{__('record.update')}}</th>
               </tr>
             </thead>
             <!-- BIND ARRAY TO TABLE -->
@@ -88,6 +93,9 @@
                 <td> {{ $record->getHeight() }}</td>
                 <td> {{ $record->getIMC() }}</td>
                 <td> {{ $record->getCreatedAt() }}</td>
+                <td>
+                  <a class="btn btn-primary" href="{{ route('record.update', ['id' => $record->getId()])}}">{{__('record.update')}}</a>
+                </td>
                 <td>
                   <form method="POST" action="{{ route('record.delete', ['id' => $record->getId()] ) }}">
                     @csrf
