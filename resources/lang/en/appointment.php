@@ -23,6 +23,6 @@ return[
   'noAppointments' => 'You do not have any appointments yet',
 
   //update
-  'updateApointment' => 'Update apointment',
+  'updateApointment' => 'Update appointment',
 
 ];
