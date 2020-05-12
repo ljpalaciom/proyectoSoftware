@@ -14,7 +14,7 @@
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     Session::save();
-    
+
     return redirect()->back();
 });
 
@@ -59,6 +59,7 @@ Route::post('/admin/user/delete/{id}', 'UserController@delete')->name("user.dele
 Route::get('/admin/user/update/{id}', 'UserController@update')->name("user.update")->middleware('checkRole:admin');
 Route::post('/admin/user/saveUpdate', 'UserController@saveUpdate')->name("user.saveUpdate")->middleware('checkRole:admin');
 Route::post('/pay', 'UserController@pay')->name("user.pay")->middleware('checkRole:user');
+Route::get('/payWatch/{price}', 'UserController@payWatch')->name("user.payWatch")->middleware('checkRole:user');
 
 //Trainer routes
 //User

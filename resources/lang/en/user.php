@@ -52,6 +52,14 @@ return[
   'confirmed' => 'Confirmed',
   'deaths' => 'Deaths',
   'recovered' => 'Recovered',
+  'paymentSucceed' => 'Payment completed successfully!',
+  'paymentError' => 'There was an error with the payment',
+  'pay' => 'Pay',
+  'cardNumber' => 'Card number',
+  'cvv' => 'CVV',
+  'expDate' => 'Expiration date',
+  'owner' => 'Owner',
+  'payment' => 'Payment',
 
   //update
   'updateUser' => 'Update user',

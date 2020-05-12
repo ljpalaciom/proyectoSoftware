@@ -27,7 +27,7 @@
           <div class="card-body">
              <h5 class="card-title">{{ $item->name }}</h5>
              <p class="card-text">{{ $item->description }}</p>
-             <a href="#" class="btn btn-dark btn-sm">{{ __('user.buy') }}</a>
+             <a href="{{ route('user.payWatch', $item->price) }}" class="btn btn-dark btn-sm">{{ __('user.buy') }}</a>
           </div>
        </div>
     </div>
