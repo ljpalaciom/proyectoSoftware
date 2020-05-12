@@ -7,24 +7,25 @@
 
   <div class="row justify-content-center">
 
-    <div class="col-md-8">
+    <div class="col-md-12">
 
       <div class="card">
-        <div class="card-header">{{ $data["user"]->getName() }}</div>
+        <div class="card-header" align="center">{{ $data["user"]->getName() }}</div>
         <div class="card-body">
           <b>{{ __('user.name') }}:</b> {{ $data["user"]->getName() }}<br />
           <b>{{ __('user.lastName') }}:</b> {{ $data["user"]->getLastName() }}<br />
           <b>{{ __('user.age') }}:</b> {{ $data["user"]->getAge() }}<br />
           <b>{{ __('user.email') }}:</b> {{ $data["user"]->getEmail() }}<br />
+          <br /><br /><br />
+          <div align="center">
+            <a type="button" class="btn btn-outline-dark col-md-8" href="{{ route('appointment.create', $data['user']->getId() )}}" >{{ __('user.addAppointment') }}</a>
+          </div>
           <br />
-          <a type="button" class="btn btn-outline-dark" href="{{ route('appointment.create', $data['user']->getId() )}}" >{{ __('user.addAppointment') }}</a>
           <br />
-          <br />
-          <div class="dropdown">
+          <div class="dropdown" align="center">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
               {{__('user.selectView')}}
             </button>
-
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('user.swipeView', 1 ) }}">{{__('user.training')}}</a>
               <a class="dropdown-item" href="{{route('user.swipeView', 2 ) }}">{{__('user.records')}}</a>
@@ -33,9 +34,11 @@
           <br />
           @if($viewType = Session::get('type'))
           @if($viewType==1)
-          <a type="button" class="btn btn-outline-dark btn-block" href="{{ route('training.create', ['id' => $data["user"]->getId()] )}}" >{{ __('training.addTraining') }}</a>
+          <div align="center">
+            <a type="button" class="btn btn-outline-dark btn-block col-md-8" href="{{ route('training.create', ['id' => $data["user"]->getId()] )}}" >{{ __('training.addTraining') }}</a>
+          </div>
           <br />
-          <table  class="table table table-striped table-bordered">
+          <table  class="table table-striped">
             <!-- ADD HEADERS -->
             <thead>
               <tr>
@@ -71,9 +74,11 @@
             </tbody>
           </table>
           @else
-          <a type="button" class="btn btn-outline-dark btn-block" href="{{ route('record.create', ['id' => $data["user"]->getId()] )}}">{{ __('record.addRecord') }}</a>
+          <div align="center">
+            <a type="button" class="btn btn-outline-dark btn-block col-md-8" href="{{ route('record.create', ['id' => $data["user"]->getId()] )}}">{{ __('record.addRecord') }}</a>
+          </div>
           <br />
-          <table  class="table table table-striped table-bordered">
+          <table  class="table table-striped">
             <!-- ADD HEADERS -->
             <thead>
               <tr>

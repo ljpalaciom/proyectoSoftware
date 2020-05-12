@@ -4,25 +4,20 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="row p-5">
-      <div class="col-md-12">
+      <div class="col-md-14">
         <ul id="errors">
           <h1 align="center"> {{__('exercise.titleList')}}</h1>
-          <div class="row py-4 justify-content-center">
-            <div class="col-md-8 offset-md-3">
               <a class="btn btn-success" href="{{ route('exercise.create')}}">{{__('exercise.create')}}</a>
               <a class="btn btn-primary" href="{{ route('exercise.list')}}">{{__('exercise.listById')}}</a>
               <a class="btn btn-primary" href="{{ route('exercise.listByDescription')}}"></i>{{__('exercise.listByDescription')}}</a>
-            </div>
-          </div>
-          <table class="table">
-            <thead class="thead-dark">
+            <br /> <br />
+          <table class="table table-striped">
+            <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">{{__('exercise.nameField')}}</th>
-                <th scope="col">{{__('exercise.descriptionField')}}</th>
-                <th scope="col">{{__('exercise.recommendationsField')}}</th>
+                <th scope="col">{{__('exercise.name')}}</th>
+                <th scope="col">{{__('exercise.description')}}</th>
+                <th scope="col">{{__('exercise.recommendations')}}</th>
                 <th scope="col">{{__('exercise.createdAtField')}}</th>
                 <th scope="col">{{__('exercise.action')}}</th>
               </tr>
@@ -35,18 +30,14 @@
                 <td>{{$exercise->getRecommendations()}}</td>
                 <td>{{$exercise->getCreatedAt()}}</td>
                 <td>
-                <a class="btn btn-success" href="{{ route('exercise.retrieve', $exercise->getId())}}"></i>{{__('exercise.inspect')}}</a>
+                <a class="btn btn-outline-dark" href="{{ route('exercise.retrieve', $exercise->getId())}}"></i>{{__('exercise.inspect')}}</a>
                 <td/>
-
               </td/>
               </tr>
               @endforeach
             </tbody>
-
           </table>
         </ul>
       </div>
-    </div>
-  </div>
 </div>
 @endsection

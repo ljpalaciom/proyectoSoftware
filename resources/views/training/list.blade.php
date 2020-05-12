@@ -12,7 +12,7 @@
       <div class="card">
         <div class="card-header">{{__('training.training')}}</div>
 
-        <table  class="table table table-striped table-bordered">
+        <table  class="table table-striped">
           <!-- ADD HEADERS -->
           <thead>
             <tr>

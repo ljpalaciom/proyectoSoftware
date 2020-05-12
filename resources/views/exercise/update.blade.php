@@ -7,9 +7,9 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       @include('util.message')
-      <div class="card">
-        <div class="card-header" align="center">{{__('exercise.updateExercise')}}: {{ $data['exercise']->getName() }}</div>
-        <div class="card-body" align="center">
+      <div class="card" align="center">
+        <div class="card-header">{{__('exercise.updateExercise')}}: {{ $data['exercise']->getName() }}</div>
+        <div class="card-body">
           @if($errors->any())
           <ul id="errors">
             @foreach($errors->all() as $error)

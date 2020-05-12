@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       @include('util.message')
-      <div class="card">
+      <div class="card" align="center">
         <div class="card-header">{{__('record.createTitle')}}</div>
         <div class="card-body">
           @if($errors->any())
@@ -25,7 +25,7 @@
             <input type="text"  class="form-control" placeholder="{{__('record.imcField')}}" name="imc" value="{{ old('imc') }}" />
             <br />
             <br />
-            <input type="submit" class="btn btn-primary form-control" value="{{__('record.create')}}" />
+            <input type="submit" class="btn btn-primary col-md-8" value="{{__('record.create')}}" />
           </form>
 
         </div>

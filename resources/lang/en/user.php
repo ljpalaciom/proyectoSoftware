@@ -54,6 +54,6 @@ return[
 
   //update
   'updateUser' => 'Update user',
-
+  'update' => 'Update',
 
 ];
