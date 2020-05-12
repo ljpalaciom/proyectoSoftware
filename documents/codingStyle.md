@@ -1,25 +1,25 @@
 # Coding style
-* Los controladores deben ser nombrados en singular y finalizando con "Controller", usará notación PascalCase.
-* Los modelos deben ser nombrados en singular, usará notación PascalCase.
-* Las rutas deberán ser nombradas en singular. Ejemplo /producto/show.
-* Los parámetros de las rutas deben usar camelCase.
-* Las rutas de url deben empezar con /
-* Las rutas de url no deben terminar con /
-* Las vistas se nombrarán teniendo en cuenta el siguiente estilo:
+* Controllers must be named in singular and ending with "Controller", will use PascalCase notation.
+* Models must be named in the singular, it will use PascalCase notation.
+* The routes must be named in the singular. Example / product / show.
+* Route parameters must use camelCase.
+* Url paths must start with /
+* Url paths must not end with /
+* The views will be named taking into account the following style:
 product.orderById
-* Las direcciones URL públicas deben usar kebab-case. Ejemplo:
-/post/how-to-program
-* Las tablas de la base de datos serán nombradas en plural, en minúscula y deben usar snake_case.
-* Las propiedades de los modelos serán nombradas en singular, en minúscula y con snake_case.
-* Las claves foráneas tendrán el nombre en singular del modelo con el sufijo _id. Ejemplo product_id.
-* Las claves primarias se llamarán id.
-* Las migraciones deben seguir un formato como el siguiente: 
+* Public URLs must use kebab-case. Example:
+/ post / how-to-program
+* Database tables will be named in plural, lowercase and must use snake_case.
+* The properties of the models will be named in the singular, in lowercase and with snake_case.
+* Foreign keys will have the singular name of the model with the suffix _id. Example product_id.
+* The primary keys will be called id.
+* Migrations must follow a format like the following:
 2017_01_01_000000_create_articles_table
-* Los archivos de blade deben ser en minúscula y con camelCase.
-* Las clases deberán ser nombrados en PascalCase.
-* Los metodos y las variables deben ser nombrados en camelCase.
-* Las constantes deben ser completamente en mayúsculas y con snake_case.
-* Las claves de configuración deben usar snake_case.
-* No use comentarios de bloque con métodos que pueden ser insinuados, es decir a menos de que requieran una descripción. Solo agregue descripciones cuando agrega más información que la declaración del método en sí.
-* Cuando use comentarios de bloque use sentencias completas que tengan punto al final.
-* Para cualquier if y cualquier ciclo use siempre llaves: {}
+* Blade files must be lowercase and camelCase.
+* Classes must be named in PascalCase.
+* Methods and variables must be named in camelCase.
+* Constants must be completely capitalized and with snake_case.
+* Configuration keys must use snake_case.
+* Do not use block comments with methods that can be hinted, that is, unless they require a description. Only add descriptions when you add more information than the method declaration itself.
+* When using block comments use full statements that have a period at the end.
+* For any if and any cycle always use braces: {}
