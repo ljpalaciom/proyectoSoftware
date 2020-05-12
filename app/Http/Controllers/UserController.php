@@ -94,11 +94,19 @@ class UserController extends Controller
 
   public function pay(Request $request){
     $paymentSystemInterface = app(PaymentSystem::class);
-    $user = User::findOrFail($request->input("user_id"));
+    $user = User::findOrFail(Auth::user()->id);
     if($paymentSystemInterface->pay($request, $user, $request->input("amount"))){
       return back()->with('success',  __('user.paymentSucceed'));
     }
     return redirect()->back()->with('error',  __('user.paymentError'));
+  }
+
+
+  public function payWatch($amount){
+      $data = []; //to be sent to the view
+      $data["title"] =  __('user.pay');
+      $data["amount"] =  $amount;
+      return view('user.pay')->with('data',$data);
   }
 
   public function update($id){

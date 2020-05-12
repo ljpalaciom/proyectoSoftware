@@ -46,6 +46,14 @@ return[
   //sponsored
   'buy' => 'Comprar',
   'sponsored' => 'Productos patrocinados',
+  'paymentSucceed' => '¡Pago completado satisfactoriamente!',
+  'paymentError' => 'Hubo un error con el pago',
+  'pay' => 'Pagar',
+  'cardNumber' => 'Número de tarjeta',
+  'cvv' => 'CVV',
+  'expDate' => 'Fecha de expiración',
+  'owner' => 'Nombre',
+  'payment' => 'Pago',
 
   //covid
   'covid' => 'Última información de Covid-19 en Colombia',
