@@ -19,7 +19,8 @@ return[
   'admin' => 'Administrador',
   'trainer' => 'Entrenador',
   'search' => 'Buscar',
-
+  'home' => 'Inicio',
+  'welcome' => 'Bienvenido',
 
   'selectView' => 'Seleccionar vista',
   'training' => 'Entrenamiento',

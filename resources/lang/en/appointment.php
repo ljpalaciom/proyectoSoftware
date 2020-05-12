@@ -1,6 +1,7 @@
 <?php
 
 return[
+  'appointment' => 'Appointments',
   //Messages
   'appointmentCreated' => 'Appointment created successfully',
   'appointmentUpdated' => 'Appointment updated successfully',
@@ -17,6 +18,7 @@ return[
   'date' => 'Date',
   'time' => 'Time',
   'trainer' => 'Trainer',
+  'user' => 'User',
   'description' => 'Description',
   'cancel' => 'Cancel',
   'update' => 'Update',
