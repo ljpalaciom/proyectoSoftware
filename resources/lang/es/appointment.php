@@ -1,7 +1,7 @@
 <?php
 
 return[
-  'appointment' => 'Appointments',
+  'appointment' => 'Citas',
   //Messages
   'appointmentCreated' => 'Cita creada correctamente',
   'appointmentUpdated' => 'Cita actualizada correctamente',
