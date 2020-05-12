@@ -29,6 +29,7 @@ class Routine extends Model
     if($validate != null){
       $defaultValidation = array_intersect_key($defaultValidation, array_flip($validate));
     }
+    $request->validate($defaultValidation);
   }
 
   public function getId()

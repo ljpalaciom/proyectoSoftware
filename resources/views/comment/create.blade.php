@@ -25,7 +25,7 @@
             @csrf
             <input name="exercise_id" type="hidden" value="{{$data['exercise']->getId()}}">
             <div class="form-group">
-              <textarea class="form-control" placeholder="{{__('comment.commentField')}}" name="comment" value="{{ old('comment') }}"></textarea>
+              <textarea class="form-control" placeholder="{{__('comment.commentField')}}" name="comment">{{ old('comment') }}</textarea>
             </div>
 
             <div class="row justify-content-center">
