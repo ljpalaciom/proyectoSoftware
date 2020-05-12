@@ -20,7 +20,6 @@
           <form method="POST" action="{{ route('routine.saveUpdate') }}" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{ $data['routine']->getId() }}" />
-            <input type="hidden" name="training_id" value="{{ $data['routine']->getTrainingId() }}">
             <input type="number" min=0 class="form-control" placeholder="{{__('routine.repetitionsField')}}" name="repetitions" value="{{ old('repetitions') }}" /> <br />
             <input type="number" min=0  class="form-control" placeholder="{{__('routine.sequencesField')}}" name="sequences" value="{{ old('sequences') }}" /> <br />
             <input type="number" min=0  class="form-control" placeholder="{{__('routine.secondsToRestField')}}" name="seconds_to_rest" value="{{ old('seconds') }}" /> <br />

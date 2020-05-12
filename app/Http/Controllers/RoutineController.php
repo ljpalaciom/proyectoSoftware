@@ -70,7 +70,7 @@ class routineController extends Controller
   }
 
   public function saveUpdate(Request $request){
-    Routine::validate($request);
+    Routine::validate($request, ['exercise_id', 'repetitions', 'sequences', 'seconds_to_rest']);
     Routine::where('id', $request->input("id"))
     ->update($request->only(['exercise_id', 'repetitions', 'sequences', 'seconds_to_rest']));
     return back()->with('success',  __('routine.routineUpdated'));

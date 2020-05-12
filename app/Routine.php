@@ -17,14 +17,18 @@ class Routine extends Model
     'training_id'
   ];
 
-  public static function validate(Request $request){
-    $request->validate([
+  public static function validate(Request $request, $validate = []){
+    $defaultValidation = [
       'exercise_id' => 'required|integer',
       'repetitions' => 'required|integer|min:0',
       'sequences' => 'required|integer|min:0',
       'seconds_to_rest' => 'required|integer|min:0',
       'training_id' => 'required|integer'
-    ]);
+    ];
+
+    if($validate != null){
+      $defaultValidation = array_intersect_key($defaultValidation, array_flip($validate));
+    }
   }
 
   public function getId()

@@ -97,6 +97,21 @@ class UserController extends Controller
     return view('user.listUsersAdmin')->with('data', $data);
   }
 
+  public function update($id){
+    $data = []; //to be sent to the view
+    $user = User::findOrFail($id);
+    $data["user"] = $user;
+    $data["title"] =  __('exercise.update');
+    return view('exercise.update')->with("data",$data);
+  }
+
+  public function saveUpdate(Request $request){
+    User::validate($request, ['name','last_name','age','email','role']);
+    User::where('id', $request->input("id"))
+            ->update($request->only(['name','last_name','age','email','role']));
+    return back()->with('success',  __('exercise.exerciseUpdated'));
+  }
+
   public function delete($id){
     User::destroy($id);
     // if($role == 2){
