@@ -36,6 +36,7 @@ return [
     'createdAt' => 'Created at',
     'delete' => 'Delete',
     'update' => 'Update',
+    'data' => 'Data',
 
     //update
     'updateRecord' => 'Update record',

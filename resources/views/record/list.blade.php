@@ -5,16 +5,14 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{__('record.listTitle')}}</div>
+        <div class="card-header" >{{__('record.listTitle')}}</div>
         <div class="card-body">
           <div class="row p-5">
             <div class="col-md-12">
-
               <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                   {{__('record.sortBy')}}
                 </button>
-
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{{route('record.sort', 'id' ) }}">{{__('record.id')}}</a>
                   <a class="dropdown-item" href="{{route('record.sort', 'name' ) }}">{{__('record.name')}}</a>
