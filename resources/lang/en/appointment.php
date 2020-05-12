@@ -17,6 +17,7 @@ return[
   'date' => 'Date',
   'time' => 'Time',
   'trainer' => 'Trainer',
+  'user' => 'User',
   'description' => 'Description',
   'cancel' => 'Cancel',
   'update' => 'Update',

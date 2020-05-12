@@ -72,16 +72,8 @@ class UserController extends Controller
     return view('user.listTrainersAdmin')->with('data', $data);
   }
 
-  public function searchByName()
-  {
-    $data = []; //to be sent to the view
-    $data['title'] = __('user.list');
-    return view('user.search')->with('data', $data);
-  }
-
   public function search(Request $request)
   {
-
     $users = User::where('name','like','%'.$request["name"].'%')->where('role',"=",'1')->get();
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
