@@ -6,7 +6,7 @@
     <div class="col-md-8">
       @include('util.message')
       <div class="card" align="center">
-        <div class="card-header" >{{__('training.createTitle')}}</div>
+        <div class="card-header">{{__('training.createTitle')}}</div>
         <div class="card-body">
           @if($errors->any())
           <ul id="errors">
@@ -25,7 +25,8 @@
             <input type="text"  class="form-control" placeholder="{{__('training.durationField')}}" name="duration" value="{{ old('duration') }}" />
             <br />
             <br />
-
+            <input type="submit" class="btn btn-success form-control" value="{{__('training.create')}}" />
+          </form>
         </div>
       </div>
     </div>
