@@ -1,24 +1,39 @@
 # Programming rules
-1. Reglas para controladores
-    * Nunca haga un echo dentro de un controlador
-    * La responsabilidad de los controladores debe ser únicamente gestionar las peticiones HTTP y retornar una respuesta adecuada. No se deben incluir, por ejemplo, reglas de validación dentro de un controlador.
-    * Siempre se debe extender de la clase Controller que es de Laravel.
-    * Los textos que vayan hacia la vista no podrán ser escritos explícitamente, por el contrario deberán usar los archivos lang e importar el texto que requiere.
+1. Rules for controllers
 
-2. Reglas para modelos
-    * Se deberán especificar los getters y setters de los atributos que serán accedidos dentro de la aplicación. No se deben ingresar directamente a estos atributos si no es por via de getters y setters.
-    *  Los atributos que podrá ingresar el usuario deberán ser especificados en la variable protegida fillable.
-    * Siempre se debe extender de la clase Model de Eloquent.
+    * Never do an echo inside a controller
+    
+    * The responsibility of the controllers should be solely to manage the HTTP requests and return an adequate response. For example,      validation rules should not be included within a controller.
+    
+    * It should always be extended from the Controller class which is from Laravel.
+    
+    * The texts that go to the view cannot be written explicitly, on the contrary they must use the lang files and import the text that they require.
 
-3. Reglas para vistas
-    * Toda vista debe extender del layout master.
-    * Todas las vistas deben usar blade.
-    * Nunca abra y cierre php en las vistas.
-    * Nunca agregue un javascript o css dentro de las vistas, estos deberán ir en archivos aparte y ser importados.
-    * Los textos no podrán ser escritos explícitamente, por el contrario deberán usar los archivos lang e importar el texto que requiere.
+2. Rules for models
 
-4. Reglas para las rutas
-    * Toda ruta debe estar asociada a un controlador. 
-    * Ninguna url debe especificar en su nombre el tipo de método. Por ejemplo es incorrecto usar rutas como:
-        * /productPost
-        * /product/post
+    * The getters and setters of the attributes that will be accessed within the application must be specified. These attributes should not be entered directly if not via getters and setters.
+    
+    * The attributes that the user can enter must be specified in the fillable protected variable.
+    
+    * It must always be extended from the Eloquent Model class.
+
+3. Rules for views
+
+    * All views must extend from the master layout.
+    
+    * All views must use blade.
+    
+    * Never open and close php in views.
+    
+    * Never add a javascript or css inside the views, they must go in separate files and be imported.
+    
+    * The texts cannot be written explicitly, on the contrary they must use the lang files and import the required text.
+
+4. Rules for routes
+
+    * All routes must be associated with a controller.
+    
+    * No url must specify the method type in its name. For example it is wrong to use routes like:
+    
+        * / productPost
+        * / product / post
