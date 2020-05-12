@@ -2,7 +2,8 @@
 
 return[
   //Messages
-  'userCreated' => 'user created successfully',
+  'userCreated' => 'User created successfully',
+  'userUpdated' => 'User updated successfully',
 
   //create
   'createUser' => 'Create user',
@@ -49,8 +50,10 @@ return[
   'covid' => 'Latest Covid-19 information in Colombia',
   'confirmed' => 'Confirmed',
   'deaths' => 'Deaths',
-  'recovered' => 'Recovered'
+  'recovered' => 'Recovered',
 
+  //update
+  'updateUser' => 'Update user',
 
 
 ];
