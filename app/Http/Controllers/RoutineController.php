@@ -64,12 +64,13 @@ class routineController extends Controller
     $data = []; //to be sent to the view
     $routine = Routine::findOrFail($id);
     $data["routine"] = $routine;
+    $data["exercises"] = Exercise::all();
     $data["title"] =  __('routine.update');
     return view('routine.update')->with("data",$data);
   }
 
   public function saveUpdate(Request $request){
-    Routine::validate($request);
+    Routine::validate($request, ['exercise_id', 'repetitions', 'sequences', 'seconds_to_rest']);
     Routine::where('id', $request->input("id"))
     ->update($request->only(['exercise_id', 'repetitions', 'sequences', 'seconds_to_rest']));
     return back()->with('success',  __('routine.routineUpdated'));
@@ -80,6 +81,7 @@ class routineController extends Controller
     Routine::destroy($id);
     return back();
   }
+
   public function save(Request $request)
   {
     Routine::validate($request);

@@ -36,17 +36,27 @@ class User extends Authenticatable
     'email_verified_at' => 'datetime',
   ];
 
-
-  public static function validate(Request $request){
-    $request->validate([
+  public static function validate(Request $request, $validate = []){
+    $defaultValidation = [
       'name' => 'required',
       'last_name' => 'required',
       'age' => 'required|integer|min:0|max:120',
       'email' => 'required|email|unique:users',
       'password' => 'required',
       'role' => 'required'
-    ]);
+    ];
+
+    if($validate != null){
+      $defaultValidation = array_intersect_key($defaultValidation, array_flip($validate));
+    }
+    $request->validate($defaultValidation);
   }
+
+  public static function validatePassword($user, $passwordToValidate){
+    $hashedPassword = $user->getPassword();
+    return Hash::check($passwordToValidate, $hashedPassword);
+  }
+
   private $indexRoles = ["user" => 1, "trainer" => 2, "admin" => 3];
 
   public function hasRole($role)

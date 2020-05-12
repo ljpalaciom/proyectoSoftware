@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Util\ApiServiceProvider;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function user()
     {
-        return view('home.user');
+        $data = [];
+        $data["covid"] = ApiServiceProvider::getCovid19Data();
+        $data["watches"] = ApiServiceProvider::getWatches();
+
+        return view('home.user')->with('data', $data);
     }
 
     public function trainer()

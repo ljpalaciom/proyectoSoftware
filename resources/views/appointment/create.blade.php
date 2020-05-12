@@ -8,7 +8,7 @@
     <div class="col-md-8">
       @include('util.message')
       <div class="card">
-        <div class="card-header"><center> {{ __('appointment.createAppointment') }} </center></div>
+        <div class="card-header" align="center"> {{ __('appointment.createAppointment') }}</div>
         <div class="card-body" align="center">
           @if($errors->any())
           <ul id="errors">

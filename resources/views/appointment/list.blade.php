@@ -28,22 +28,25 @@
           <td> {{ $appointment->getTrainerName() }} </td>
           <td> {{ $appointment->getDescription() }} </td>
           <td>
+            <a class="btn btn-primary" href="{{ route('appointment.update', ['id' => $appointment->getId()])}}">{{__('appointment.update')}}</a>
+          </td>
+          <td>
             @if(Auth::user()->getRole() == 2)
             <form method="POST" action="{{ route('appointment.deleteTrainer', $appointment->getId()) }}">
-            @else
-            <form method="POST" action="{{ route('appointment.deleteUser', $appointment->getId()) }}">
-            @endif
-              @csrf
-              <div class="row justify-content-center">
-                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-              </div>
-            </form>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-    @endif
+              @else
+              <form method="POST" action="{{ route('appointment.deleteUser', $appointment->getId()) }}">
+                @endif
+                @csrf
+                <div class="row justify-content-center">
+                  <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                </div>
+              </form>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
+      @endif
+    </div>
   </div>
-</div>
-@endsection
+  @endsection
