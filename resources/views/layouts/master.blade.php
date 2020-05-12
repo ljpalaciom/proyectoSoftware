@@ -53,7 +53,7 @@
               <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">{{__('appointment.appointment')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('exercise.list') }}">{{__('excercise.excercise')}}</a>
+              <a class="nav-link" href="{{ route('exercise.list') }}">{{__('exercise.exercise')}}</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 3)

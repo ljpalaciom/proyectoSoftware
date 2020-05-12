@@ -32,7 +32,8 @@
             </div>
           </div>
           <br />
-          @if($viewType = Session::get('type'))
+
+          @if($viewType = Session::get('viewType'))
           @if($viewType==1)
           <div align="center">
             <a type="button" class="btn btn-outline-dark btn-block col-md-8" href="{{ route('training.create', ['id' => $data["user"]->getId()] )}}" >{{ __('training.addTraining') }}</a>

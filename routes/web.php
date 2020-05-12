@@ -13,6 +13,8 @@
 
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
+    Session::save();
+    
     return redirect()->back();
 });
 
