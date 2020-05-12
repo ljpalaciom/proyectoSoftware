@@ -24,7 +24,7 @@
             <textarea class="form-control" placeholder="{{__('appointment.insertDescription')}}" name="description" value="{{ old('description') }}"></textarea>
           </div>
           <br />
-          <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}""/>
+          <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}"/>
           <input type="submit" class="btn btn-success" value="{{ __('appointment.create') }}"/>
         </form>
       </div>

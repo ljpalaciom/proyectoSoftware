@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Training;
 use App\Record;
+use App\Interfaces\PaymentSystem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -88,13 +89,21 @@ class UserController extends Controller
     return view('user.search')->with('data', $data);
   }
 
-
   public function listByName()
   {
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
     $data['users'] = User::where('role', 1)->orderBy('name')->get();
     return view('user.listUsersAdmin')->with('data', $data);
+  }
+
+  public function pay(Request $request){
+    $paymentSystemInterface = app(PaymentSystem::class);
+    $user = User::findOrFail($request->input("user_id"));
+    if($paymentSystemInterface->pay($request, $user, $request->input("amount"))){
+      return back()->with('success',  __('user.paymentSucceed'));
+    }
+    return redirect()->back()->with('error',  __('user.paymentError'));
   }
 
   public function delete($id){
