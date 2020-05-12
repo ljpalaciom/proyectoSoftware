@@ -21,7 +21,7 @@
             @csrf
             <input type="date" class="form-control"  name="date" value="{{ old('date') }}"/> <br />
             <input type="time" class="form-control"  name="time" value="{{ old('time') }}"/> <br />
-            <textarea class="form-control" placeholder="{{__('appointment.insertDescription')}}" name="description" value="{{ old('description') }}"></textarea>
+            <textarea class="form-control" placeholder="{{__('appointment.insertDescription')}}" name="description">{{ old('description') }}</textarea>
           <br />
           <input type="hidden" class="form-control" name="trainer_id" value="{{Auth::user()->getId()}}"/>
           <input type="submit" class="btn btn-success col-md-8" value="{{ __('appointment.create') }}"/>

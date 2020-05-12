@@ -25,7 +25,7 @@
             <input type="text"  class="form-control" placeholder="{{__('record.imcField')}}" name="imc" value="{{ old('imc') }}" />
             <br />
             <br />
-            <input type="submit" class="btn btn-primary col-md-8" value="{{__('record.create')}}" />
+            <input type="submit" class="btn btn-success col-md-8" value="{{__('record.create')}}" />
           </form>
 
         </div>
