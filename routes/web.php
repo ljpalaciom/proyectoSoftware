@@ -31,6 +31,7 @@ Route::get('/trainer/record/show/{id}', 'RecordController@show')->name("record.s
 Route::get('/trainer/record/update/{id}', 'RecordController@update')->name("record.update")->middleware('checkRole:trainer');
 Route::post('/trainer/record/saveUpdate', 'RecordController@saveUpdate')->name("record.saveUpdate")->middleware('checkRole:trainer');
 
+
 //Home
 Route::get('/index', 'HomeController@user')->name("home.user");
 Route::get('/trainer', 'HomeController@trainer')->name("home.trainer");
@@ -48,7 +49,7 @@ Route::get('/admin/user/show/{id}', 'UserController@show')->name("user.showAdmin
 Route::post('/admin/user/delete/{id}', 'UserController@delete')->name("user.deleteAdmin")->middleware('checkRole:admin');
 Route::get('/admin/user/update/{id}', 'UserController@update')->name("user.update")->middleware('checkRole:admin');
 Route::post('/admin/user/saveUpdate', 'UserController@saveUpdate')->name("user.saveUpdate")->middleware('checkRole:admin');
-
+Route::post('/pay', 'UserController@pay')->name("user.pay")->middleware('checkRole:user');
 
 //Trainer routes
 //User
@@ -82,7 +83,8 @@ Route::get('/trainer/exercise/update/{id}', 'ExerciseController@update')->name("
 Route::post('/trainer/exercise/saveUpdate', 'ExerciseController@saveUpdate')->name("exercise.saveUpdate")->middleware('checkRole:trainer');
 
 
-//Users routes
+
+
 //Appointment
 Route::get('/appointment/list/{userId}', 'AppointmentController@list')->name("appointment.listUser")->middleware('checkRole:user');
 Route::post('/appointment/delete/{id}', 'AppointmentController@delete')->name("appointment.deleteUser")->middleware('checkRole:user');

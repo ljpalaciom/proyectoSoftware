@@ -10,13 +10,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends  Authenticatable
+class User extends Authenticatable
 {
 
   use Notifiable;
 
   //id, name, role, lastName, age, email, password, role
-  protected $fillable = ['name','last_name','age','email','password', 'role']; //
+  protected $fillable = ['name','last_name','age','email','password', 'role'];
 
   /**
   * The attributes that should be hidden for arrays.
@@ -63,6 +63,7 @@ class User extends  Authenticatable
   {
       return $this->getRole() == $this->indexRoles[$role];
   }
+
   public function getBaseUrl(){
 
     if($this->getRole() == 1){ //user

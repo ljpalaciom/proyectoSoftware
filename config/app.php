@@ -178,8 +178,7 @@ return [
         App\Providers\VideoServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         App\Providers\ImageServiceProvider::class,
-
-
+        App\Providers\PaymentServiceProvider::class,
 
     ],
 

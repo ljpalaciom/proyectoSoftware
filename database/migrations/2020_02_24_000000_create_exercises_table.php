@@ -16,9 +16,9 @@ class CreateExercisesTable extends Migration
         Schema::create('exercises', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->text('description')->nullable();;
-            $table->text('recommendations')->nullable();;
-            $table->text('path_video')->nullable();;
+            $table->text('description')->nullable();
+            $table->text('recommendations')->nullable();
+            $table->text('path_video')->nullable();
             $table->timestamps();
         });
     }
