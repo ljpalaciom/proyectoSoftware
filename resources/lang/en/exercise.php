@@ -12,9 +12,12 @@ return [
     'nameField' => 'Enter name',
     'descriptionField' => 'Enter description',
     'recommendationsField'  => 'Enter recommendations',
+    'name' => 'Name',
+    'description' => 'Description',
+    'recommendations'  => 'Recommendations',
     'videoField' => 'Enter video',
     'imageField' => 'Enter image',
-    'createdAtField' => 'Created at',
+    'createdAtField' => 'Created',
 
     //list
     'list' => 'List exercises',

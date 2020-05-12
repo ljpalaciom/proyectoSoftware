@@ -9,7 +9,7 @@
   <h1 align="center">{{ __('user.list') }}</h1>
   <form method="GET" action="{{ route('user.search') }}">
     @csrf
-    <input type="text" class="form-control" placeholder="{{ __('user.enterName') }}" name="name" value="{{ old('name') }}" />
+    <input type="text" class="form-control" placeholder="{{ __('user.enterName') }}" name="name" value="{{ old('name') }}" /> <br />
     <input type="submit" class="btn btn-primary form-control" value="{{__('user.search')}}" />
   </form>
   <br />
@@ -26,15 +26,9 @@
       @foreach($data["users"] as $user)
       <tr>
         <th scope="row">
-          @if($loop->index < 2)
           <a class="navbar-brand" href="{{ route('user.showTrainer', $user->getId() ) }}" style="color:black">
             <b>{{ $user->getId() }}</b>
           </a>
-          @else
-          <a class="navbar-brand" href="{{ route('user.showTrainer', $user->getId() ) }}" style="color:blue">
-            {{ $user->getId() }}
-          </a>
-          @endif
         </th>
         <td> {{ $user->getName() }} </td>
         <td> {{ $user->getEmail() }} </td>

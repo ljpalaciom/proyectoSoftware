@@ -7,9 +7,9 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       @include('util.message')
-      <div class="card">
-        <div class="card-header"><center> {{ __('user.create') }} </center></div>
-        <div class="card-body" align="center">
+      <div class="card" align="center">
+        <div class="card-header">{{__('user.updateUser')}}: {{ $data['user']->getName() }}</div>
+        <div class="card-body">
           @if($errors->any())
           <ul id="errors">
             @foreach($errors->all() as $error)
@@ -17,8 +17,9 @@
             @endforeach
           </ul>
           @endif
-          <form method="POST" action="{{ route('user.saveAdmin') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('user.saveUpdate') }}" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="id" value="{{ $data['user']->getId() }}" />
             <input type="text" class="form-control" placeholder="{{ __('user.enterName') }}" name="name" value="{{ old('name') }}"/> <br />
             <input type="text" class="form-control" placeholder="{{ __('user.enterLastName') }}" name="last_name" value="{{ old('last_name') }}" /><br />
             <input type="number" class="form-control" placeholder="{{ __('user.enterAge') }}" name="age" value="{{ old('age') }}" /> <br />
@@ -28,9 +29,8 @@
               <option value="1" selected>{{ __('user.user') }}</option>
               <option value="2">{{ __('user.trainer') }}</option>
               <option value="3">{{ __('user.admin') }}</option>
-            </select> <br />
-            <br />
-            <input type="submit" class="btn btn-success col-md-8" value="{{ __('user.create') }}"/>
+            </select> <br /> <br />
+            <input type="submit" class="btn btn-primary col-md-8" value="{{__('user.update')}}" />
           </form>
         </div>
       </div>

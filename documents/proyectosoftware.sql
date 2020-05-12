@@ -44,14 +44,14 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`id`, `date`, `time`, `description`, `user_id`, `trainer_id`, `created_at`, `updated_at`) VALUES
-(1, '2009-06-20', '10:15:00', 'Modify the training routine.', 5, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(2, '2009-06-21', '11:30:00', 'Modify the training routine.', 6, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(3, '1972-06-22', '12:15:00', 'Modify the training routine.', 7, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(4, '1992-06-23', '13:30:00', 'Take body measurements.', 8, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(5, '2006-06-24', '14:15:00', 'Take body measurements.', 9, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(6, '1981-06-25', '15:30:00', 'Take body measurements.', 10, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(7, '1971-07-03', '16:15:00', 'Modify the training routine.', 5, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
-(8, '1991-07-04', '10:40:00', 'Take body measurements.', 6, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(1, '2020-06-20', '10:15:00', 'Modify the training routine.', 5, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(2, '2020-06-21', '11:30:00', 'Modify the training routine.', 6, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(3, '2020-06-22', '12:15:00', 'Modify the training routine.', 7, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(4, '2020-06-23', '13:30:00', 'Take body measurements.', 8, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(5, '2020-06-24', '14:15:00', 'Take body measurements.', 9, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(6, '2020-06-25', '15:30:00', 'Take body measurements.', 10, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(7, '2020-07-03', '16:15:00', 'Modify the training routine.', 5, 3, '2020-05-10 04:08:32', '2020-05-10 04:08:32'),
+(8, '2020-07-04', '10:40:00', 'Take body measurements.', 6, 4, '2020-05-10 04:08:32', '2020-05-10 04:08:32');
 
 
 -- --------------------------------------------------------
@@ -114,9 +114,9 @@ INSERT INTO `exercises` (`id`, `name`, `description`, `recommendations`, `path_v
 (5, 'Triceps extension', 'Stand tall holding a dumbbell over your head with both hands, arms straight. Keeping your chest up, lower the weight behind your head, then raise it back to the start.', 'Take care of your back', 'exercise/video5.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image5.jpg'),
 (6, 'Pull-up', 'Hold a pull-up bar with an overhand grip, hands shoulder-width apart. Brace your core, then pull yourself up until your lower chest touches the bar. Lower until your arms are straight again.', 'Be careful with your shoulders.', 'exercise/video6.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image6.jpg'),
 (7, 'Bent-over row', 'Hold a barbell using an overhand grip, hands just outside your legs, and lean forward from the hips. Bend your knees slightly and brace your core, then pull the bar up, leading with your elbows. Lower it back to the start.', 'Take care of your back', 'exercise/video7.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image7.jpg'),
-(8, 'Chin-up', 'Hold a pull-up bar with hands shoulder-width apart, palms facing you. Brace your core, then pull yourself up until your chin is over the bar. Lower until your arms are straight again.', 'Be careful with your shoulders.', '', 'exercise/video8.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image8.jpg'),
+(8, 'Chin-up', 'Hold a pull-up bar with hands shoulder-width apart, palms facing you. Brace your core, then pull yourself up until your chin is over the bar. Lower until your arms are straight again.', 'Be careful with your shoulders.', 'exercise/video8.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image8.jpg'),
 (9, 'Standing biceps curl', 'Stand with dumbbells by your sides, palms facing forwards. Keeping your elbows tucked in, curl the weights up, squeezing your biceps at the top. Lower them back to the start.', 'Take care of your back', 'exercise/video9.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image9.jpg'),
-(10, 'Seated incline curl', 'Sit on an incline bench with dumbbells by your sides, palms facing forwards. Keeping your elbows tucked in, curl the weights up, squeezing your biceps at the top. Lower them back to the start.', 'Be careful with your shoulders.', 'exercise/video10.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image10.jpg'),
+(10, 'Seated incline curl', 'Sit on an incline bench with dumbbells by your sides, palms facing forwards. Keeping your elbows tucked in, curl the weights up, squeezing your biceps at the top. Lower them back to the start.', 'Be careful with your shoulders.', 'exercise/video10.mp4', '2020-05-10 04:08:34', '2020-05-10 04:08:34', 'exercise/image10.jpg');
 
 
 -- --------------------------------------------------------
@@ -251,12 +251,12 @@ INSERT INTO `routines` (`id`, `repetitions`, `sequences`, `seconds_to_rest`, `ex
 (7, 25, 4, 120, 7, 2, '2020-05-10 04:09:24', '2020-05-10 04:09:24'),
 (8, 25, 5, 60, 8, 3, '2020-05-10 04:09:24', '2020-05-10 04:09:24'),
 (9, 25, 3, 30, 9, 3, '2020-05-10 04:09:24', '2020-05-10 04:09:24'),
-(10, 20, 4, 120, 10, 3, '2020-05-10 04:09:24', '2020-05-10 04:09:24');
+(10, 20, 4, 120, 10, 3, '2020-05-10 04:09:24', '2020-05-10 04:09:24'),
 (11, 20, 4, 60, 1, 4, '2020-05-10 04:08:35', '2020-05-10 04:08:35'),
 (12, 20, 5, 90, 2, 5, '2020-05-10 04:08:35', '2020-05-10 04:08:35'),
 (13, 15, 3, 120, 3, 6, '2020-05-10 04:08:35', '2020-05-10 04:08:35'),
 (14, 15, 4, 30, 4, 7, '2020-05-10 04:08:35', '2020-05-10 04:08:35'),
-(15, 10, 5, 60, 5, 8, '2020-05-10 04:08:35', '2020-05-10 04:08:35'),
+(15, 10, 5, 60, 5, 8, '2020-05-10 04:08:35', '2020-05-10 04:08:35');
 
 -- --------------------------------------------------------
 
@@ -286,7 +286,7 @@ INSERT INTO `trainings` (`id`, `name`, `day`, `duration`, `user_id`, `created_at
 (5, 'Hard Back', 1, 120, 7, '2020-05-10 04:08:33', '2020-05-10 04:08:33'),
 (6, 'Back and Biceps', 1, 120, 8, '2020-05-10 04:08:33', '2020-05-10 04:08:33'),
 (7, 'Hard Back', 1, 120, 9, '2020-05-10 04:08:33', '2020-05-10 04:08:33'),
-(8, 'Back and Biceps', 1, 120, 10, '2020-05-10 04:08:33', '2020-05-10 04:08:33'),
+(8, 'Back and Biceps', 1, 120, 10, '2020-05-10 04:08:33', '2020-05-10 04:08:33');
 
 -- --------------------------------------------------------
 
