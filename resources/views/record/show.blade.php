@@ -7,7 +7,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{ $data["title"]}}</div>
+        <div class="card-header" align="center">{{ $data["title"]}}</div>
         <div class="card-body">
           <b>{{__('record.id')}}:</b> {{ $data["record"]->getId() }}<br />
           <b>{{__('record.name')}}:</b> {{ $data["record"]->getName() }}<br />

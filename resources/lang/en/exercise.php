@@ -22,8 +22,8 @@ return [
     //list
     'list' => 'List exercises',
     'titleList' => 'List exercises',
-    'listById' => 'List by id',
-    'listByDescription' => 'List by description',
+    'listById' => 'Order by id',
+    'listByDescription' => 'Order by description',
     'inspect' => 'Inspect',
     'action' => 'Action',
     'update' => 'Update',

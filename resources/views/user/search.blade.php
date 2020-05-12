@@ -19,23 +19,23 @@
         <th scope="col">{{ __('user.id') }}</th>
         <th scope="col">{{ __('user.name') }}</th>
         <th scope="col">{{ __('user.email') }}</th>
+        <th scope="col">{{__('exercise.action')}}</th>
       </tr>
     </thead>
     <tbody>
       @isset($data["users"])
       @foreach($data["users"] as $user)
       <tr>
-        <th scope="row">
-          <a class="navbar-brand" href="{{ route('user.showTrainer', $user->getId() ) }}" style="color:black">
-            <b>{{ $user->getId() }}</b>
-          </a>
-        </th>
+        <td> {{ $user->getId() }} </td>
         <td> {{ $user->getName() }} </td>
         <td> {{ $user->getEmail() }} </td>
-      </tr>
-      @endforeach
-      @endisset
-    </tbody>
-  </table>
-</div>
-@endsection
+        <td>
+          <a class="btn btn-outline-dark" href="{{ route('user.showTrainer', $user->getId() ) }}"></i>{{__('exercise.inspect')}}</a>
+          <td/>
+        </tr>
+        @endforeach
+        @endisset
+      </tbody>
+    </table>
+  </div>
+  @endsection

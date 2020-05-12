@@ -36,6 +36,7 @@ return [
     'createdAt' => 'Fecha de creación',
     'delete' => 'Eliminar',
     'update' => 'Actualizar',
+    'data' => 'Datos',
 
     //update
     'updateRecord' => 'Actualizar ficha',

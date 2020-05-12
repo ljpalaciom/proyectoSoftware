@@ -15,18 +15,18 @@
         <th scope="col">{{ __('user.id') }}</th>
         <th scope="col">{{ __('user.name') }}</th>
         <th scope="col">{{ __('user.email') }}</th>
+        <th scope="col">{{__('exercise.action')}}</th>
       </tr>
     </thead>
     <tbody>
       @foreach($data["users"] as $user)
       <tr>
-        <th scope="row">
-          <a class="navbar-brand" href="{{ route('user.showAdmin', $user->getId() ) }}" style="color:black">
-            <b>{{ $user->getId() }}</b>
-          </a>
-        </th>
+        <td> {{ $user->getId() }} </td>
         <td> {{ $user->getName() }} </td>
         <td> {{ $user->getEmail() }} </td>
+        <td>
+          <a class="btn btn-outline-dark" href="{{ route('user.showAdmin', $user->getId() ) }}"></i>{{__('exercise.inspect')}}</a>
+          <td/>
       </tr>
       @endforeach
     </tbody>

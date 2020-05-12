@@ -7,9 +7,9 @@
       <div class="col-md-14">
         <ul id="errors">
           <h1 align="center"> {{__('exercise.titleList')}}</h1>
+              <a class="btn btn-outline-dark" href="{{ route('exercise.list')}}">{{__('exercise.listById')}}</a>
+              <a class="btn btn-outline-dark" href="{{ route('exercise.listByDescription')}}"></i>{{__('exercise.listByDescription')}}</a>
               <a class="btn btn-success" href="{{ route('exercise.create')}}">{{__('exercise.create')}}</a>
-              <a class="btn btn-primary" href="{{ route('exercise.list')}}">{{__('exercise.listById')}}</a>
-              <a class="btn btn-primary" href="{{ route('exercise.listByDescription')}}"></i>{{__('exercise.listByDescription')}}</a>
             <br /> <br />
           <table class="table table-striped">
             <thead>
@@ -32,7 +32,6 @@
                 <td>
                 <a class="btn btn-outline-dark" href="{{ route('exercise.retrieve', $exercise->getId())}}"></i>{{__('exercise.inspect')}}</a>
                 <td/>
-              </td/>
               </tr>
               @endforeach
             </tbody>
