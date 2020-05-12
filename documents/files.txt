@@ -1,4 +1,4 @@
-Screen 1. See user records
-Screen 2. See routine and exercise
-Screen 3. Create appointment
-Screen 4. List users
+Screen 1. Trainer home
+Screen 2. Records list
+Screen 3. Payment
+Screen 4. User home
