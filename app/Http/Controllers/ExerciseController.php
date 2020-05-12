@@ -7,10 +7,6 @@ use App\Interfaces\VideoStorage;
 use App\Interfaces\ImageStorage;
 class ExerciseController extends Controller
 {
-  public function home()
-  {
-    return view('exercise.home');
-  }
 
   public function create()
   {

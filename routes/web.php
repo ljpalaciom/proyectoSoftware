@@ -72,7 +72,6 @@ Route::post('/trainer/appointment/saveUpdate', 'AppointmentController@saveUpdate
 
 
 //Exercise
-Route::get('trainer/exercise/home', 'ExerciseController@home')->name("exercise.home")->middleware('checkRole:trainer');
 Route::get('trainer/exercise/create', 'ExerciseController@create')->name("exercise.create")->middleware('checkRole:trainer');
 Route::post('trainer/exercise/save', 'ExerciseController@save')->name("exercise.save")->middleware('checkRole:trainer');
 Route::get('trainer/exercise/list', 'ExerciseController@list')->name("exercise.list")->middleware('checkRole:trainer');
@@ -81,8 +80,6 @@ Route::get('trainer/exercise/retrieve/{id}', 'ExerciseController@retrieve')->nam
 Route::post('trainer/exercise/delete/{id}', 'ExerciseController@delete')->name("exercise.delete")->middleware('checkRole:trainer');
 Route::get('/trainer/exercise/update/{id}', 'ExerciseController@update')->name("exercise.update")->middleware('checkRole:trainer');
 Route::post('/trainer/exercise/saveUpdate', 'ExerciseController@saveUpdate')->name("exercise.saveUpdate")->middleware('checkRole:trainer');
-
-
 
 
 //Appointment
