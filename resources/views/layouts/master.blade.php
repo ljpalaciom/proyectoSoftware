@@ -16,6 +16,7 @@
 </head>
 <body>
   <div id="app">
+
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -29,41 +30,41 @@
             @else
             @if (Auth::user()->getRole() == 1)
             <a class="navbar-brand" href="{{ route('home.user') }}">
-              Home
+              {{__('user.home')}}
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('training.list') }}">Training</a>
+              <a class="nav-link" href="{{ route('training.list') }}">{{__('training.training')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('record.list') }}">Records</a>
+              <a class="nav-link" href="{{ route('record.list') }}">{{__('record.record')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('appointment.listUser', Auth::user()->getId()) }}">Appointments</a>
+              <a class="nav-link" href="{{ route('appointment.listUser', Auth::user()->getId()) }}">{{__('appointment.appointment')}}</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 2)
             <a class="navbar-brand" href="{{ route('home.trainer') }}">
-              Home
+              {{__('user.home')}}
             </a>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('user.search') }}">Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">Appointments</a>
+              <a class="nav-link" href="{{ route('appointment.listTrainer', Auth::user()->getId()) }}">{{__('appointment.appointment')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('exercise.list') }}">Exercises</a>
+              <a class="nav-link" href="{{ route('exercise.list') }}">{{__('excercise.excercise')}}</a>
             </li>
             @endif
             @if (Auth::user()->getRole() == 3)
             <a class="navbar-brand" href="{{ route('home.admin') }}">
-              Home
+              {{__('user.home')}}
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('user.listUsersAdmin') }}">Users</a>
+              <a class="nav-link" href="{{ route('user.listUsersAdmin') }}">{{__('user.user')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('user.listTrainersAdmin') }}">Trainers</a>
+              <a class="nav-link" href="{{ route('user.listTrainersAdmin') }}">{{__('user.trainer')}}</a>
             </li>
             @endif
             @endguest
@@ -71,6 +72,7 @@
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
+
             @guest
             @else
             <li class="nav-item dropdown">
@@ -90,6 +92,12 @@
             </div>
           </li>
           @endguest
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('locale/en') }}" > EN </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('locale/es') }}" > ES </a>
+          </li>
         </ul>
       </div>
     </div>

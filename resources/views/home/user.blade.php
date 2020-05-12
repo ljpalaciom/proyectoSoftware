@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header"> <center>Welcome {{ Auth::user()->name }}</center></div>
+        <div class="card-header"> <center>{{ __('user.welcome') }} {{ Auth::user()->name }}</center></div>
         <div class="card-body">
           <center>{{ __('user.covid') }}</center>
           <center>{{ __('user.confirmed') }}:{{$data["covid"]["response"]->Confirmed}} </center>
