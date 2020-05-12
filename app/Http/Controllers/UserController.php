@@ -72,16 +72,8 @@ class UserController extends Controller
     return view('user.listTrainersAdmin')->with('data', $data);
   }
 
-  public function searchByName()
-  {
-    $data = []; //to be sent to the view
-    $data['title'] = __('user.list');
-    return view('user.search')->with('data', $data);
-  }
-
   public function search(Request $request)
   {
-
     $users = User::where('name','like','%'.$request["name"].'%')->where('role',"=",'1')->get();
     $data = []; //to be sent to the view
     $data['title'] = __('user.list');
@@ -104,12 +96,13 @@ class UserController extends Controller
       return back()->with('success',  __('user.paymentSucceed'));
     }
     return redirect()->back()->with('error',  __('user.paymentError'));
+  }
 
   public function update($id){
     $data = []; //to be sent to the view
     $user = User::findOrFail($id);
     $data["user"] = $user;
-    $data["title"] =  __('exercise.update');
+    $data["title"] =  __('user.update');
     return view('user.update')->with("data",$data);
   }
 

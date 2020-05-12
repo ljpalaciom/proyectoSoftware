@@ -64,7 +64,6 @@ Route::get('/trainer/user/usersList', 'UserController@listUsers')->name("user.li
 Route::get('/trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkRole:trainer');
 
 Route::get('/trainer/user/search', 'UserController@search')->name("user.search")->middleware('checkRole:trainer');
-Route::get('/trainer/user/searchByName', 'UserController@searchByName')->name("user.searchByName")->middleware('checkRole:trainer');
 Route::get('/trainer/user/show/{id}', 'UserController@show')->name("user.showTrainer")->middleware('checkRole:trainer');
 Route::get('/trainer/user/show/swipe/{type}', 'UserController@swipeView')->name("user.swipeView")->middleware('checkRole:trainer');
 

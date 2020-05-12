@@ -45,16 +45,11 @@ class AppointmentController extends Controller
   {
     $data = []; //to be sent to the view
     $data['title'] = __('appointment.list');
-    if(Auth::user()->getRole() == 2){
-      $data['appointments'] = Appointment::join('users','users.id' , '=', 'appointments.trainer_id')
-      ->select('appointments.*', 'users.name')
-      ->where('trainer_id', $userId)->get();
+    if(Auth::user()->getRole() == 2){  //If it is trainer
+      $data['appointments'] = Appointment::with('user:id,name')->where('trainer_id', $userId)->get();
     } else{
-      $data['appointments'] = Appointment::join('users','users.id' , '=', 'appointments.trainer_id')
-      ->select('appointments.*', 'users.name')
-      ->where('user_id', $userId)->get();
+      $data['appointments'] = Appointment::with('trainer:id,name')->where('user_id', $userId)->get();
     }
-
     return view('appointment.list')->with('data', $data);
   }
 
