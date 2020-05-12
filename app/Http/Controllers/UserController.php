@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Training;
 use App\Record;
+use Session;
 use App\Interfaces\PaymentSystem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -47,9 +48,11 @@ class UserController extends Controller
 
   public function swipeView($type){
     if($type==1){
-      return back()->with('type',1);
+      Session::put('viewType',1);
+      return back();
     }else{
-      return back()->with('type',2);
+      Session::put('viewType',2);
+      return back();
     }
   }
 
